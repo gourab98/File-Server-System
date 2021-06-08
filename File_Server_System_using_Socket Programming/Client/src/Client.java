@@ -1,9 +1,14 @@
+import javax.imageio.IIOException;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.DataOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.Socket;
 
 public class Client {
 
@@ -60,11 +65,37 @@ public class Client {
                 if(fileToSend[0]== null){
                     jlFileName.setText("Please choose a file first.");
                 }
+                else {
+                    try {
+                        FileInputStream fileInputStream = new FileInputStream(fileToSend[0].getAbsolutePath());
+                        Socket socket = new Socket("localhost", 1212);
+
+                        DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
+
+                        String fileName = fileToSend[0].getName();
+                        byte[] fileNameBytes = fileName.getBytes();
+
+                        byte[] fileContentBytes = new byte[(int) fileToSend[0].length()];
+                        fileInputStream.read(fileContentBytes);
+
+                        dataOutputStream.writeInt(fileNameBytes.length);
+                        dataOutputStream.write(fileNameBytes);
+
+                        dataOutputStream.writeInt(fileContentBytes.length);
+                        dataOutputStream.write(fileContentBytes);
+                    } catch (IOException error){
+                        error.printStackTrace();
+                    }
+
+                }
             }
         });
 
 
-
+        jFrame.add(jlTitle);
+        jFrame.add(jlFileName);
+        jFrame.add(jpButton);
+        jFrame.setVisible(true);
 
     }
 }
