@@ -1,4 +1,3 @@
-import javax.imageio.IIOException;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -41,7 +40,7 @@ public class Client {
         jbChooseFile.setPreferredSize(new Dimension(150, 75));
         jbChooseFile.setFont(new Font("Arial", Font.BOLD, 20));
 
-        jpButton.add(jlFileName);
+        jpButton.add(jbSendFile);
         jpButton.add(jbChooseFile);
 
         jbChooseFile.addActionListener(new ActionListener() {
