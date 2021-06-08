@@ -32,7 +32,7 @@ public class Client {
         JPanel jpButton = new JPanel();
         jpButton.setBorder(new EmptyBorder(75, 0, 10, 0));
 
-        JButton jbSendFile = new JButton("Send File");
+        JButton jbSendFile = new JButton("Upload File");
         jbSendFile.setPreferredSize(new Dimension(150, 75));
         jbSendFile.setFont(new Font("Arial", Font.BOLD, 20));
 
@@ -54,7 +54,6 @@ public class Client {
                     jlFileName.setText("The file you want to send is "+ fileToSend[0].getName());
 
                 }
-
             }
         });
 
@@ -85,11 +84,9 @@ public class Client {
                     } catch (IOException error){
                         error.printStackTrace();
                     }
-
                 }
             }
         });
-
 
         jFrame.add(jlTitle);
         jFrame.add(jlFileName);
