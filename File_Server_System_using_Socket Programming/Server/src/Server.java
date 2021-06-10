@@ -1,9 +1,14 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -12,9 +17,9 @@ public class Server {
 
     static ArrayList<MyFile> myFiles = new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        int fileId =0;
+        int fileId = 0;
 
         JFrame jFrame = new JFrame("Server");
         jFrame.setSize(400,400);
@@ -58,7 +63,7 @@ public class Server {
                         dataInputStream.readFully(fileContentBytes, 0, fileContentLength);
 
                         JPanel jpFileRow = new JPanel();
-                        jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.Y_AXIS));
+                        jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
 
                         JLabel jlFileName = new JLabel(fileName);
                         jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
@@ -70,11 +75,24 @@ public class Server {
 
                              jpFileRow.add(jlFileName);
                              jPanel.add(jpFileRow);
-                             jFrame.validate();
-                        }
 
+                             jFrame.validate();
+                        } else {
+                            jpFileRow.setName(String.valueOf(fileId));
+                            jpFileRow.addMouseListener(getMyMouseListener());
+
+                            jpFileRow.add(jlFileName);
+                            jpFileRow.add(jpFileRow);
+
+                            jFrame.validate();
+                        }
+                        myFiles.add(new MyFile(fileId,fileName,fileContentBytes,getFileExtension(fileName)));
+
+                        fileId++;
                     }
                 }
+            } catch (IOException error){
+                error.printStackTrace();
             }
 
         }
@@ -87,13 +105,16 @@ public class Server {
             @Override
             public void mouseClicked(MouseEvent e) {
 
-                JPanel jPanel =(JPanel) e.getSource();
+                JPanel jPanel = (JPanel) e.getSource();
 
                 int fileId = Integer.parseInt(jPanel.getName());
 
-                for(MyFile myFile:myFiles){
-                    JFrame jfPreview = createFrame();
-                    jfPreview.setVisible(true);
+                for (MyFile myFile : myFiles) {
+                    if (myFile.getId() == fileId) {
+                        JFrame jfPreview = createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());
+                        jfPreview.setVisible(true);
+
+                    }
                 }
             }
 
@@ -116,8 +137,7 @@ public class Server {
             public void mouseExited(MouseEvent e) {
 
             }
-        }
-
+        };
     }
     public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension){
 
@@ -132,7 +152,7 @@ public class Server {
         jlTitle.setFont(new Font("Arial", Font.BOLD,25));
         jlTitle.setBorder(new EmptyBorder(20,0,10,0));
 
-        JLabel jlPrompt = new JLabel("Are you sure you want to download"+ fileName);
+        JLabel jlPrompt = new JLabel("Are you sure you want to download"+ fileName+ "?");
         jlPrompt.setFont(new Font("Arial", Font.BOLD,20));
         jlPrompt.setBorder(new EmptyBorder(20,0,10,0));
         jlPrompt.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -153,11 +173,52 @@ public class Server {
         jpButtons.add(jbYes);
         jpButtons.add(jbNo);
 
+        if(fileExtension.equalsIgnoreCase("txt")){
+            jlFileContent.setText("<html>"+ new String(fileData)+"</html>");
+        } else{
+            jlFileContent.setIcon(new ImageIcon(fileData));
+        }
+
+        jbYes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                File fileToDownload = new File(fileName);
+
+                try{
+                    FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
+
+                    fileOutputStream.write(fileData);
+                    fileOutputStream.close();
+
+                    jFrame.dispose();
+
+                } catch (IOException error){
+                    error.printStackTrace();
+                }
+            }
+        });
+
+        jbNo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jFrame.dispose();
+            }
+        });
+
+        jPanel.add(jlTitle);
+        jPanel.add(jlPrompt);
+        jPanel.add(jlFileContent);
+        jPanel.add(jpButtons);
+
+        jFrame.add(jPanel);
+
+        return jFrame;
+
     }
 
     public static String getFileExtension(String fileName) {
 
-        int i =fileName.lastIndexOf('.');
+        int i = fileName.lastIndexOf('.');
 
         if(i>0){
             return fileName.substring(i+1);
