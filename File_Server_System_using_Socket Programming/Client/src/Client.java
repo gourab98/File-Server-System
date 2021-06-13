@@ -24,7 +24,7 @@ public class Client {
         jlTitle.setBorder(new EmptyBorder(20,0,10,0));
         jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JLabel jlFileName = new JLabel("Choose a file to send");
+        JLabel jlFileName = new JLabel("Choose a file to send to the server");
         jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
         jlFileName.setBorder(new EmptyBorder(50, 0, 0, 0));
         jlFileName.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -52,7 +52,6 @@ public class Client {
                 if(jFileChooser.showOpenDialog(null)== JFileChooser.APPROVE_OPTION){
                     fileToSend[0] = jFileChooser.getSelectedFile();
                     jlFileName.setText("The file you want to send is "+ fileToSend[0].getName());
-
                 }
             }
         });
