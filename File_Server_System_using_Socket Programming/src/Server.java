@@ -130,10 +130,6 @@ public class Server {
                 }
             }
         });
-
-
-
-
         readAllFile();
 
         ServerSocket serverSocket = new ServerSocket(1212);
@@ -146,11 +142,6 @@ public class Server {
         while (true) {
 
             try {
-
-//                Socket socket = serverSocket.accept();
-//                allFileOutputStream = socket.getOutputStream();
-//                ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
-//                objectOutputStream.writeObject(allFiles);
 
                 DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
                 int fileNameLength = dataInputStream.readInt();
