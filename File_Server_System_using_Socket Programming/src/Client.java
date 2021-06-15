@@ -134,20 +134,20 @@ public class Client {
                 }
             }
         });
-<<<<<<< HEAD
+
 
             socket = new Socket("localhost", 1212);
             InputStream inputStream = socket.getInputStream();
             ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
             allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
             System.out.println(allFiles.size());
-=======
+
         socket = new Socket("localhost", 1234);
         InputStream inputStream = socket.getInputStream();
         ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
         allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
         System.out.println(allFiles.size());
->>>>>>> fd083e34f493d342cac5f3d686692d6c05b55ed2
+
 
         jbSendFile.addActionListener(new ActionListener() {
             @Override
