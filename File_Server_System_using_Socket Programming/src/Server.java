@@ -145,7 +145,7 @@ public class Server {
         ServerSocket serverSocket = new ServerSocket(1212);
 
             Socket socket = serverSocket.accept();
-            waitClient.setText("Connected");
+            waitClient.setText("Client is Connected");
 
             allFileOutputStream = socket.getOutputStream();
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
