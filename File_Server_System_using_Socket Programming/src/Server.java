@@ -40,14 +40,25 @@ public class Server {
         jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
         jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        JLabel waitClient = new JLabel("Waiting For the Client to Connect");
+        waitClient.setFont(new Font("Arial", Font.BOLD, 20));
+        waitClient.setBorder(new EmptyBorder(20, 0, 0, 0));
+        waitClient.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        JPanel jPanel1 = new JPanel();
+        jPanel1.setBorder(new EmptyBorder(2,0,0,0));
+
         JButton jDownload = new JButton("Available Server Files");
         jDownload.setPreferredSize(new Dimension(250,100));
         jDownload.setFont(new Font("Arial", Font.BOLD, 15));
         jDownload.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        jPanel.add(jDownload);
+
 
         jFrame.add(jlTitle);
+        jFrame.add(waitClient);
+        jFrame.add(jPanel1);
+        jPanel.add(jDownload);
         jFrame.add(jScrollPane);
         jFrame.setVisible(true);
 
@@ -88,7 +99,6 @@ public class Server {
 
                         MyFile newFile = new MyFile(fileid, FileName, fileContentBytes, getFileExtension(FileName));
                         newFile.setData(fileContentBytes);
-
 
                         downloadedFile.add(newFile);
                         fileid++;
@@ -133,11 +143,14 @@ public class Server {
         readAllFile();
 
         ServerSocket serverSocket = new ServerSocket(1212);
-        Socket socket = serverSocket.accept();
 
-        allFileOutputStream = socket.getOutputStream();
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
-        objectOutputStream.writeObject(allFiles);
+            Socket socket = serverSocket.accept();
+            waitClient.setText("Connected");
+
+            allFileOutputStream = socket.getOutputStream();
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
+            objectOutputStream.writeObject(allFiles);
+
 
         while (true) {
 

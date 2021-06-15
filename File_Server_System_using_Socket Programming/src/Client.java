@@ -11,9 +11,11 @@ import java.util.ArrayList;
 
 public class Client {
 
-    static Socket socket;
-    static ArrayList<MyFile> downloadedfile = new ArrayList<>();
-    static ArrayList<MyFile> allFiles = new ArrayList<>();
+    private static String serverName;
+    private static int portNumber;
+    public static Socket socket;
+    public static ArrayList<MyFile> downloadedfile = new ArrayList<>();
+    public static ArrayList<MyFile> allFiles = new ArrayList<>();
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
@@ -57,7 +59,7 @@ public class Client {
         jPort.setAlignmentX(Component.LEFT_ALIGNMENT);
 
 
-        JTextField jPo = new JTextField("1212");
+        JTextField jPo = new JTextField("0000");
         jPo.setFont(new Font("Arial",Font.ITALIC,20));
         jPo.setPreferredSize(new Dimension(100,50));
 
@@ -111,6 +113,23 @@ public class Client {
                 int  a = Integer.parseInt(string2);
                 string3[0] = string1;
                 b[0] = a;
+
+                serverName = jIp.getText();
+                portNumber= Integer.parseInt(jPo.getText());
+
+                try {
+                    socket = new Socket(serverName, portNumber);
+                    InputStream inputStream = socket.getInputStream();
+                    ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+                    allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
+                    System.out.println(allFiles.size());
+
+                } catch (IOException | ClassNotFoundException ex) {
+                    ex.printStackTrace();
+                }
+                System.out.println(serverName);
+                System.out.println(portNumber);
+
                 if(b[0] == 1212){
                     JOptionPane.showMessageDialog(jFrame,"Connected with server");
                 }else{
@@ -131,11 +150,11 @@ public class Client {
                 }
             }
         });
-        socket = new Socket("localhost", 1212);
-        InputStream inputStream = socket.getInputStream();
-        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-        allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
-        System.out.println(allFiles.size());
+//        socket = new Socket("localhost", 1212);
+//        InputStream inputStream = socket.getInputStream();
+//        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+//        allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
+//        System.out.println(allFiles.size());
 
         jbSendFile.addActionListener(new ActionListener() {
             @Override
