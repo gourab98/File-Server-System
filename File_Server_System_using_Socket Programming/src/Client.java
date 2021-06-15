@@ -131,7 +131,7 @@ public class Client {
                 }
             }
         });
-        socket = new Socket("localhost", 1212);
+        socket = new Socket("localhost", 1234);
         InputStream inputStream = socket.getInputStream();
         ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
         allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
