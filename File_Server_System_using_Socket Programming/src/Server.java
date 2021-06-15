@@ -12,100 +12,69 @@ import java.util.ArrayList;
 
 public class Server {
 
-    static OutputStream fos;
-
-    // Array list to hold information about the files received.
+    static OutputStream allFileOutputStream;
+    static ArrayList<MyFile> allFiles = new ArrayList<>();
     static ArrayList<MyFile> myFiles = new ArrayList<>();
-    static ArrayList<MyFile> AllFile = new ArrayList<>();
-    static ArrayList<MyFile> DownFile = new ArrayList<>();
+    static ArrayList<MyFile> downloadedFile = new ArrayList<>();
 
-    public static int serverPortNumber=1235;
+    public static int serverPortNumber = 1212;
     public static void main(String[] args) throws IOException {
 
-
         int fileId = 0;
-        /** Mahdi **/
-
         int[] size = new int[1];
         size[0] = 0;
-        /** Mahdi **/
-        // Main container, set the name.
-        JFrame jFrame = new JFrame("WittCode's Server");
-        // Set the size of the frame.
-        jFrame.setSize(800, 800);
-        // Give the frame a box layout that stacks its children on top of each other.
+
+        JFrame jFrame = new JFrame("Server GUI");
+        jFrame.setSize(700, 700);
         jFrame.setLayout(new BoxLayout(jFrame.getContentPane(), BoxLayout.Y_AXIS));
-        // When closing the frame also close the program.
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Panel that will hold the title label and the other jpanels.
         JPanel jPanel = new JPanel();
-        // Make the panel that contains everything to stack its child elements on top of eachother.
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
 
-        // Make it scrollable when the data gets in jpanel.
         JScrollPane jScrollPane = new JScrollPane(jPanel);
-        // Make it so there is always a vertical scrollbar.
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-        // Title above panel.
-        JLabel jlTitle = new JLabel("WittCode's File Receiver");
-        // Change the font of the title.
+        JLabel jlTitle = new JLabel("Server File GUI");
         jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-        // Add a border around the title for spacing.
         jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
-        // Center the title horizontally in the middle of the frame.
         jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-/** Mahdi **/
-        JButton jDownload = new JButton("Available server files");
-        jDownload.setPreferredSize(new Dimension(250,75));
-        jDownload.setFont(new Font("Arial",Font.BOLD,15));
+
+        JButton jDownload = new JButton("Available Server Files");
+        jDownload.setPreferredSize(new Dimension(250,100));
+        jDownload.setFont(new Font("Arial", Font.BOLD, 15));
+        jDownload.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         jPanel.add(jDownload);
-/** Mahdi **/
-        // Add everything to the main GUI.
+
         jFrame.add(jlTitle);
         jFrame.add(jScrollPane);
-        // Make the GUI show up.
         jFrame.setVisible(true);
-/** Mahdi **/
+
         jDownload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JFrame jFrame1 = new JFrame("Server");
-
+                JFrame jFrame1 = new JFrame("Server File");
                 jFrame1.setSize(900, 800);
-
                 jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
 
-                //jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
                 JPanel jPanel = new JPanel();
-
                 jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
-
                 JScrollPane jScrollPane = new JScrollPane(jPanel);
-
                 jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-
                 JLabel jlTitle = new JLabel("File Lists");
-
                 jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-
                 jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
-
                 jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-
                 jFrame1.add(jlTitle);
                 jFrame1.add(jScrollPane);
-
                 jFrame1.setVisible(true);
                 int fileid = 0;
                 File dic = new File("Server File/");
                 File[] diclist = dic.listFiles();
                 int i=0;
-                DownFile.clear();
+                downloadedFile.clear();
 
                 for (File file : diclist) {
                     i++;
@@ -121,7 +90,7 @@ public class Server {
                         newFile.setData(fileContentBytes);
 
 
-                        DownFile.add(newFile);
+                        downloadedFile.add(newFile);
                         fileid++;
 
                         System.out.println(newFile.getId() + " " + newFile.getName() + " " + newFile.getData().length + " " + newFile.getFileExtension());
@@ -131,7 +100,7 @@ public class Server {
                         er.printStackTrace();
                     }
                 }
-                for (MyFile file : DownFile) {
+                for (MyFile file : downloadedFile) {
 
                     JPanel jpFileRow = new JPanel();
                     jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
@@ -142,7 +111,7 @@ public class Server {
                     if (getFileExtension(file.name).equalsIgnoreCase("txt")) {
 
                         jpFileRow.setName((String.valueOf(file.id)));
-                        jpFileRow.addMouseListener(getMyMouseListener());
+                        jpFileRow.addMouseListener(Client.getMyMouseListener());
 
                         jpFileRow.add(jlFileName);
                         jPanel.add(jpFileRow);
@@ -151,7 +120,7 @@ public class Server {
 
                         jpFileRow.setName((String.valueOf(file.id)));
 
-                        jpFileRow.addMouseListener(getMyMouseListener());
+                        jpFileRow.addMouseListener(Client.getMyMouseListener());
 
                         jpFileRow.add(jlFileName);
                         jPanel.add(jpFileRow);
@@ -161,327 +130,210 @@ public class Server {
                 }
             }
         });
-/** Mahdi **/
 
 
 
 
+        readAllFile();
 
-
-
-
-
-
-
-
-
-
-
-
-        ReadFile();
-
-        // Create a server socket that the server will be listening with.
-
-        ServerSocket serverSocket = new ServerSocket(1234);
+        ServerSocket serverSocket = new ServerSocket(1212);
         Socket socket = serverSocket.accept();
 
-        fos = socket.getOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(AllFile);
+                allFileOutputStream = socket.getOutputStream();
+                ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
+                objectOutputStream.writeObject(allFiles);
 
-        // This while loop will run forever so the server will never stop unless the application is closed.
         while (true) {
 
             try {
-                // Wait for a client to connect and when they do create a socket to communicate with them.
 
-                // jPanel..showMessageDialog(null,"Client is Connected");
+//                Socket socket = serverSocket.accept();
+//                allFileOutputStream = socket.getOutputStream();
+//                ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
+//                objectOutputStream.writeObject(allFiles);
 
-
-                // Stream to receive data from the client through the socket.
                 DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
-
-                // Read the size of the file name so know when to stop reading.
                 int fileNameLength = dataInputStream.readInt();
-                // If the file exists
+
                 if (fileNameLength > 0) {
-                    // Byte array to hold name of file.
+
                     byte[] fileNameBytes = new byte[fileNameLength];
-                    // Read from the input stream into the byte array.
                     dataInputStream.readFully(fileNameBytes, 0, fileNameBytes.length);
-                    // Create the file name from the byte array.
+
                     String fileName = new String(fileNameBytes);
-                    // Read how much data to expect for the actual content of the file.
+
                     int fileContentLength = dataInputStream.readInt();
-                    // If the file exists.
+
                     if (fileContentLength > 0) {
-                        // Array to hold the file data.
                         byte[] fileContentBytes = new byte[fileContentLength];
-                        // Read from the input stream into the fileContentBytes array.
                         dataInputStream.readFully(fileContentBytes, 0, fileContentBytes.length);
-                        // Panel to hold the picture and file name.
+
                         JPanel jpFileRow = new JPanel();
                         jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
-                        // Set the file name.
+
                         JLabel jlFileName = new JLabel(fileName);
                         jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
                         jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
+
                         if (getFileExtension(fileName).equalsIgnoreCase("txt")) {
-                            // Set the name to be the fileId so you can get the correct file from the panel.
                             jpFileRow.setName((String.valueOf(fileId)));
-                            jpFileRow.addMouseListener(getMyMouseListener());
-                            // Add everything.
+
                             jpFileRow.add(jlFileName);
                             jPanel.add(jpFileRow);
+
                             jFrame.validate();
                         } else {
-                            // Set the name to be the fileId so you can get the correct file from the panel.
                             jpFileRow.setName((String.valueOf(fileId)));
-                            // Add a mouse listener so when it is clicked the popup appears.
-                            jpFileRow.addMouseListener(getMyMouseListener());
-                            // Add the file name and pic type to the panel and then add panel to parent panel.
+
                             jpFileRow.add(jlFileName);
                             jPanel.add(jpFileRow);
-                            // Perform a relayout.
+
                             jFrame.validate();
                         }
 
-                        // Add the new file to the array list which holds all our data.
                         myFiles.add(new MyFile(fileId, fileName, fileContentBytes, getFileExtension(fileName)));
-                        // Increment the fileId for the next file to be received.
                         fileId++;
-                        ReadFile();
+                        readAllFile();
 
                         File fileToDownload = new File("Server File/"+fileName);
 
-                        try {
-                            // Create a stream to write data to the file.
-                            FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
-                            // Write the actual file data to the file.
-                            fileOutputStream.write(fileContentBytes);
-                            // Close the stream.
-                            fileOutputStream.close();
-                            // Get rid of the jFrame. after the user clicked yes.
-                        } catch (IOException ex) {
-                            ex.printStackTrace();
-                        }
+                        FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
+                        fileOutputStream.write(fileContentBytes);
+                        fileOutputStream.close();
+
                     }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
-
     }
 
-    /**
-     * @param fileName
-     * @return The extension type of the file.
-     */
     public static String getFileExtension(String fileName) {
-        // Get the file type by using the last occurence of . (for example aboutMe.txt returns txt).
-        // Will have issues with files like myFile.tar.gz.
+
         int i = fileName.lastIndexOf('.');
-        // If there is an extension.
         if (i > 0) {
-            // Set the extension to the extension of the filename.
             return fileName.substring(i + 1);
         } else {
             return "No extension found.";
         }
     }
 
-    /**
-     * When the jpanel is clicked a popup shows to say whether the user wants to download
-     * the selected document.
-     *
-     * @return A mouselistener that is used by the jpanel.
-     */
-    public static MouseListener getMyMouseListener() {
-        return new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // Get the source of the click which is the JPanel.
-                JPanel jPanel = (JPanel) e.getSource();
-                // Get the ID of the file.
-                int fileId = Integer.parseInt(jPanel.getName());
-                // Loop through the file storage and see which file is the selected one.
-                for (MyFile myFile : myFiles) {
-                    if (myFile.getId() == fileId) {
-                        JFrame jfPreview = createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());
-                        jfPreview.setVisible(true);
-                    }
-                }
-            }
 
-            @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        };
-    }
 
     public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension) {
 
-        // Frame to hold everything.
-        JFrame jFrame = new JFrame("WittCode's File Downloader");
-        // Set the size of the frame.
+
+        JFrame jFrame = new JFrame("File Downloader");
         jFrame.setSize(400, 400);
 
-        // Panel to hold everything.
         JPanel jPanel = new JPanel();
-        // Make the layout a box layout with child elements stacked on top of each other.
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
 
-        // Title above panel.
-        JLabel jlTitle = new JLabel("WittCode's File Downloader");
-        // Center the label title horizontally.
+        JLabel jlTitle = new JLabel("File Downloader");
         jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-        // Change the font family, size, and style.
         jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-        // Add spacing on the top and bottom of the element.
         jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
 
-        // Label to prompt the user if they are sure they want to download the file.
         JLabel jlPrompt = new JLabel("Are you sure you want to download " + fileName + "?");
-        // Change the font style, size, and family of the label.
         jlPrompt.setFont(new Font("Arial", Font.BOLD, 20));
-        // Add spacing on the top and bottom of the label.
         jlPrompt.setBorder(new EmptyBorder(20, 0, 10, 0));
-        // Center the label horizontally.
         jlPrompt.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Create the yes for accepting the download.
+
         JButton jbYes = new JButton("Yes");
         jbYes.setPreferredSize(new Dimension(150, 75));
-        // Set the font for the button.
         jbYes.setFont(new Font("Arial", Font.BOLD, 20));
 
-        // No button for rejecting the download.
+
         JButton jbNo = new JButton("No");
-        // Change the size of the button must be preferred because if not the layout will ignore it.
         jbNo.setPreferredSize(new Dimension(150, 75));
-        // Set the font for the button.
         jbNo.setFont(new Font("Arial", Font.BOLD, 20));
 
-        // Label to hold the content of the file whether it be text of images.
         JLabel jlFileContent = new JLabel();
-        // Align the label horizontally.
         jlFileContent.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Panel to hold the yes and no buttons and make the next to each other left and right.
         JPanel jpButtons = new JPanel();
-        // Add spacing around the panel.
         jpButtons.setBorder(new EmptyBorder(20, 0, 10, 0));
-        // Add the yes and no buttons.
         jpButtons.add(jbYes);
         jpButtons.add(jbNo);
 
-        // If the file is a text file then display the text.
         if (fileExtension.equalsIgnoreCase("txt")) {
-            // Wrap it with <html> so that new lines are made.
             jlFileContent.setText("<html>" + new String(fileData) + "</html>");
-            // If the file is not a text file then make it an image.
         } else {
             jlFileContent.setIcon(new ImageIcon(fileData));
         }
 
-        // Yes so download file.
         jbYes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Create the file with its name.
-                File fileToDownload = new File("Server File\\"+fileName);
+                File fileToDownload = new File("Server File\\" + fileName);
                 fileToDownload.delete();
                 jFrame.dispose();
-
-
-
-                /*
                 try {
-                    // Create a stream to write data to the file.
                     FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
-                    // Write the actual file data to the file.
+
                     fileOutputStream.write(fileData);
-                    // Close the stream.
                     fileOutputStream.close();
-                    // Get rid of the jFrame. after the user clicked yes.
+
                     jFrame.dispose();
+
                 } catch (IOException ex) {
                     ex.printStackTrace();
-                }*/
+                }
 
             }
         });
 
 
-        // No so close window.
         jbNo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // User clicked no so don't download the file but close the jframe.
+
                 jFrame.dispose();
             }
         });
 
-        // Add everything to the panel before adding to the frame.
         jPanel.add(jlTitle);
         jPanel.add(jlPrompt);
         jPanel.add(jlFileContent);
         jPanel.add(jpButtons);
-
-        // Add panel to the frame.
         jFrame.add(jPanel);
 
-        // Return the jFrame so it can be passed the right data and then shown.
         return jFrame;
-
     }
 
-    public static void ReadFile(){
+
+    public static void readAllFile() {
 
         int fileId = 0;
-        File dir = new File("Server File/");
-        File[] listOfFiles = dir.listFiles();
+        File dFile = new File("Server File/");
+        File[] listOfALLFiles = dFile.listFiles();
 
-        for (File file : listOfFiles) {
+        for(File file : listOfALLFiles){
+
             try {
+
                 FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
-                String FileName = file.getName();
+                String fileName = file.getName();
                 byte[] fileContentBytes = new byte[(int) file.length()];
-                if ((int) file.length() > 0) {
+                if((int) file.length() > 0){
                     fileInputStream.read(fileContentBytes);
                 }
 
-                MyFile newFile = new MyFile(fileId, FileName, fileContentBytes, getFileExtension(FileName));
+                MyFile newFile = new MyFile(fileId, fileName, fileContentBytes, getFileExtension(fileName));
                 newFile.setData(fileContentBytes);
-                AllFile.add(newFile);
+                allFiles.add(newFile);
                 fileId++;
 
-                System.out.println(newFile.getId() + " " + newFile.getName() + " " + newFile.getData().length + " " + newFile.getFileExtension());
+                System.out.println(newFile.getId()+" "+ newFile.getName()+" "+newFile.getName().length()+ " "+ newFile.getFileExtension());
+
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
+
         }
-
     }
-
 }
