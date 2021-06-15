@@ -15,13 +15,17 @@ public class Server {
     static OutputStream allFileOutputStream;
     static ArrayList<MyFile> allFiles = new ArrayList<>();
     static ArrayList<MyFile> myFiles = new ArrayList<>();
+    static ArrayList<MyFile> downloadedFile = new ArrayList<>();
 
+    public static int serverPortNumber = 1212;
     public static void main(String[] args) throws IOException {
 
         int fileId = 0;
+        int[] size = new int[1];
+        size[0] = 0;
 
         JFrame jFrame = new JFrame("Server GUI");
-        jFrame.setSize(400, 400);
+        jFrame.setSize(700, 700);
         jFrame.setLayout(new BoxLayout(jFrame.getContentPane(), BoxLayout.Y_AXIS));
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -36,9 +40,99 @@ public class Server {
         jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
         jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+        JButton jDownload = new JButton("Available Server Files");
+        jDownload.setPreferredSize(new Dimension(250,100));
+        jDownload.setFont(new Font("Arial", Font.BOLD, 15));
+        jDownload.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        jPanel.add(jDownload);
+
         jFrame.add(jlTitle);
         jFrame.add(jScrollPane);
         jFrame.setVisible(true);
+
+        jDownload.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                JFrame jFrame1 = new JFrame("Server File");
+                jFrame1.setSize(900, 800);
+                jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
+
+                JPanel jPanel = new JPanel();
+                jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
+                JScrollPane jScrollPane = new JScrollPane(jPanel);
+                jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+                JLabel jlTitle = new JLabel("File Lists");
+                jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
+                jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
+                jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
+                jFrame1.add(jlTitle);
+                jFrame1.add(jScrollPane);
+                jFrame1.setVisible(true);
+                int fileid = 0;
+                File dic = new File("Server File/");
+                File[] diclist = dic.listFiles();
+                int i=0;
+                downloadedFile.clear();
+
+                for (File file : diclist) {
+                    i++;
+                    try {
+                        FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
+                        String FileName = file.getName();
+                        byte[] fileContentBytes = new byte[(int) file.length()];
+                        if ((int) file.length() > 0) {
+                            fileInputStream.read(fileContentBytes);
+                        }
+
+                        MyFile newFile = new MyFile(fileid, FileName, fileContentBytes, getFileExtension(FileName));
+                        newFile.setData(fileContentBytes);
+
+
+                        downloadedFile.add(newFile);
+                        fileid++;
+
+                        System.out.println(newFile.getId() + " " + newFile.getName() + " " + newFile.getData().length + " " + newFile.getFileExtension());
+                    } catch (FileNotFoundException er) {
+                        er.printStackTrace();
+                    } catch (IOException er) {
+                        er.printStackTrace();
+                    }
+                }
+                for (MyFile file : downloadedFile) {
+
+                    JPanel jpFileRow = new JPanel();
+                    jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
+
+                    JLabel jlFileName = new JLabel(file.name);
+                    jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
+                    jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
+                    if (getFileExtension(file.name).equalsIgnoreCase("txt")) {
+
+                        jpFileRow.setName((String.valueOf(file.id)));
+                        jpFileRow.addMouseListener(Client.getMyMouseListener());
+
+                        jpFileRow.add(jlFileName);
+                        jPanel.add(jpFileRow);
+                        jFrame1.validate();
+                    } else {
+
+                        jpFileRow.setName((String.valueOf(file.id)));
+
+                        jpFileRow.addMouseListener(Client.getMyMouseListener());
+
+                        jpFileRow.add(jlFileName);
+                        jPanel.add(jpFileRow);
+
+                        jFrame1.validate();
+                    }
+                }
+            }
+        });
+
+
+
 
         readAllFile();
 

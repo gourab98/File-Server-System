@@ -12,14 +12,15 @@ import java.util.ArrayList;
 public class Client {
 
     static Socket socket;
-    static ArrayList<MyFile> downloadedfile = new ArrayList<>();
+    static ArrayList<MyFile> downloadedFile = new ArrayList<>();
     static ArrayList<MyFile> allFiles = new ArrayList<>();
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         final File[] fileToSend = new File[1];
         final String[] string3 = new String[1];
-        final int[] b =new int[1];
+        final int[] check = new int[1];
+
         int[] size = new int[1];
         size[0] = 0;
 
@@ -106,16 +107,18 @@ public class Client {
             @Override
             public void actionPerformed(ActionEvent e) {
 
+
                 String string1 = jIp.getText();
                 String string2 = jPo.getText();
-                int  a = Integer.parseInt(string2);
+                int  port = Integer.parseInt(string2);
                 string3[0] = string1;
-                b[0] = a;
-                if(b[0] == 1212){
+                 check[0] = port;
+                if(check[0] == 1212){
                     JOptionPane.showMessageDialog(jFrame,"Connected with server");
                 }else{
                     JOptionPane.showMessageDialog(jFrame,"Server is not connected");
                 }
+
             }
         });
 
@@ -131,11 +134,12 @@ public class Client {
                 }
             }
         });
-        socket = new Socket("localhost", 1212);
-        InputStream inputStream = socket.getInputStream();
-        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-        allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
-        System.out.println(allFiles.size());
+
+            socket = new Socket("localhost", 1212);
+            InputStream inputStream = socket.getInputStream();
+            ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
+            allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
+            System.out.println(allFiles.size());
 
         jbSendFile.addActionListener(new ActionListener() {
             @Override
@@ -198,7 +202,7 @@ public class Client {
                 File dic = new File("Server File/");
                 File[] diclist = dic.listFiles();
                 int i=0;
-                downloadedfile.clear();
+                downloadedFile.clear();
 
                 for (File file : diclist) {
                     i++;
@@ -214,7 +218,7 @@ public class Client {
                         newFile.setData(fileContentBytes);
 
 
-                        downloadedfile.add(newFile);
+                        downloadedFile.add(newFile);
                         fileid++;
 
                         System.out.println(newFile.getId() + " " + newFile.getName() + " " + newFile.getData().length + " " + newFile.getFileExtension());
@@ -227,7 +231,7 @@ public class Client {
 
                 size[0] = i;
 
-                for (MyFile file : downloadedfile) {
+                for (MyFile file : downloadedFile) {
 
                     JPanel jpFileRow = new JPanel();
                     jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
@@ -287,7 +291,7 @@ public class Client {
                 JPanel jPanel = (JPanel) e.getSource();
                 int fileId = Integer.parseInt(jPanel.getName());
 
-                for (MyFile myFile : downloadedfile) {
+                for (MyFile myFile : downloadedFile) {
 
                     if (myFile.getId() == fileId) {
                         JFrame jfPreview = createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());

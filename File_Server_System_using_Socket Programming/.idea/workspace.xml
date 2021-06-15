@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="" />
+    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,19 +31,29 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1tyBhdnU2MKUqZGepds8dvu3Z18" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="Application.Client">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Client" />
       <module name="File_Server_System_using_Socket Programming" />
@@ -43,8 +70,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Application.Server" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -61,26 +88,33 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1641" y="25" key="#Project_Structure" timestamp="1623731613070">
       <screen x="1366" y="0" width="1366" height="728" />
     </state>
     <state x="1641" y="25" key="#Project_Structure/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623731613070" />
-    <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1623747353315">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom" timestamp="1623756862126">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="2" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623756862126" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353315" />
-    <state width="1323" height="179" key="GridCell.Tab.0.center" timestamp="1623747353315">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="2" key="GridCell.Tab.0.center" timestamp="1623756862126">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="2" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623756862126" />
     <state width="1323" height="179" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353315" />
-    <state width="1323" height="179" key="GridCell.Tab.0.left" timestamp="1623747353315">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="2" key="GridCell.Tab.0.left" timestamp="1623756862125">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="2" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623756862125" />
     <state width="1323" height="179" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353315" />
-    <state width="1323" height="179" key="GridCell.Tab.0.right" timestamp="1623747353315">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="2" key="GridCell.Tab.0.right" timestamp="1623756862126">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="2" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623756862126" />
     <state width="1323" height="179" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353315" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1623747353309">
       <screen x="1366" y="0" width="1366" height="728" />
@@ -98,6 +132,14 @@
       <screen x="1366" y="0" width="1366" height="728" />
     </state>
     <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353309" />
+    <state x="1779" y="126" key="extract.method.dialog" timestamp="1623751909505">
+      <screen x="1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="1779" y="126" key="extract.method.dialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623751909505" />
+    <state x="1757" y="0" key="refactoring.ChangeSignatureDialog" timestamp="1623751876545">
+      <screen x="1366" y="0" width="1366" height="728" />
+    </state>
+    <state x="1757" y="0" key="refactoring.ChangeSignatureDialog/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623751876545" />
     <state x="1712" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1623734510511">
       <screen x="1366" y="0" width="1366" height="728" />
     </state>
@@ -108,68 +150,84 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Server.java</url>
-          <line>42</line>
+          <line>136</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Server.java</url>
-          <line>60</line>
+          <line>154</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Server.java</url>
-          <line>176</line>
+          <line>270</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Server.java</url>
-          <line>187</line>
+          <line>281</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>73</line>
+          <line>74</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>35</line>
+          <line>36</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>92</line>
+          <line>93</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>97</line>
+          <line>98</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>104</line>
+          <line>105</line>
           <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>119</line>
+          <line>122</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>200</line>
+          <line>204</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>292</line>
+          <line>296</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Client.java</url>
-          <line>261</line>
+          <line>265</line>
           <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Client.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Server.java</url>
+          <line>53</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/Server.java</url>
+          <line>19</line>
+          <properties field="serverPortNumber" class="Server" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
