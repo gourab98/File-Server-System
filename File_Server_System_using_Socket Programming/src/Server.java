@@ -48,7 +48,7 @@ public class Server {
         JPanel jPanel1 = new JPanel();
         jPanel1.setBorder(new EmptyBorder(2,0,0,0));
 
-        JButton jDownload = new JButton("Available Server Files");
+        JButton jDownload = new JButton("All Available Server Files");
         jDownload.setPreferredSize(new Dimension(250,100));
         jDownload.setFont(new Font("Arial", Font.BOLD, 15));
         jDownload.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -66,8 +66,8 @@ public class Server {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                JFrame jFrame1 = new JFrame("Server File");
-                jFrame1.setSize(900, 800);
+                JFrame jFrame1 = new JFrame("All Server File");
+                jFrame1.setSize(500, 500);
                 jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
 
                 JPanel jPanel = new JPanel();

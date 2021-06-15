@@ -26,7 +26,7 @@ public class Client {
         size[0] = 0;
 
         JFrame jFrame = new JFrame("Client GUI");
-        jFrame.setSize(900,600);
+        jFrame.setSize(700,700);
         jFrame.setLayout(new BoxLayout(jFrame.getContentPane(),BoxLayout.Y_AXIS));
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -191,8 +191,8 @@ public class Client {
         jDownload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame jFrame1 = new JFrame("Server Files");
-                jFrame1.setSize(400, 400);
+                JFrame jFrame1 = new JFrame("All Available Server Files");
+                jFrame1.setSize(500, 500);
                 jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
 
                 JPanel jPanel = new JPanel();
