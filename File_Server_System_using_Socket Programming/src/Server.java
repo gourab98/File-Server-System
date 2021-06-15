@@ -65,79 +65,7 @@ public class Server {
         jDownload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                JFrame jFrame1 = new JFrame("All Server File");
-                jFrame1.setSize(500, 500);
-                jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
-
-                JPanel jPanel = new JPanel();
-                jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
-                JScrollPane jScrollPane = new JScrollPane(jPanel);
-                jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-                JLabel jlTitle = new JLabel("File Lists");
-                jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-                jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
-                jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-                jFrame1.add(jlTitle);
-                jFrame1.add(jScrollPane);
-                jFrame1.setVisible(true);
-                int fileid = 0;
-                File dic = new File("Server File/");
-                File[] diclist = dic.listFiles();
-                int i=0;
-                downloadedFile.clear();
-
-                for (File file : diclist) {
-                    i++;
-                    try {
-                        FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
-                        String FileName = file.getName();
-                        byte[] fileContentBytes = new byte[(int) file.length()];
-                        if ((int) file.length() > 0) {
-                            fileInputStream.read(fileContentBytes);
-                        }
-
-                        MyFile newFile = new MyFile(fileid, FileName, fileContentBytes, getFileExtension(FileName));
-                        newFile.setData(fileContentBytes);
-
-                        downloadedFile.add(newFile);
-                        fileid++;
-
-                        System.out.println(newFile.getId() + " " + newFile.getName() + " " + newFile.getData().length + " " + newFile.getFileExtension());
-                    } catch (FileNotFoundException er) {
-                        er.printStackTrace();
-                    } catch (IOException er) {
-                        er.printStackTrace();
-                    }
-                }
-                for (MyFile file : downloadedFile) {
-
-                    JPanel jpFileRow = new JPanel();
-                    jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
-
-                    JLabel jlFileName = new JLabel(file.name);
-                    jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
-                    jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
-                    if (getFileExtension(file.name).equalsIgnoreCase("txt")) {
-
-                        jpFileRow.setName((String.valueOf(file.id)));
-                        jpFileRow.addMouseListener(Client.getMyMouseListener());
-
-                        jpFileRow.add(jlFileName);
-                        jPanel.add(jpFileRow);
-                        jFrame1.validate();
-                    } else {
-
-                        jpFileRow.setName((String.valueOf(file.id)));
-
-                        jpFileRow.addMouseListener(Client.getMyMouseListener());
-
-                        jpFileRow.add(jlFileName);
-                        jPanel.add(jpFileRow);
-
-                        jFrame1.validate();
-                    }
-                }
+                ShowFiles.showAvailableFiles();
             }
         });
         readAllFile();
@@ -222,90 +150,24 @@ public class Server {
             return "No extension found.";
         }
     }
-
-
-
-    public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension) {
-
-
-        JFrame jFrame = new JFrame("File Downloader");
-        jFrame.setSize(400, 400);
-
-        JPanel jPanel = new JPanel();
-        jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
-
-        JLabel jlTitle = new JLabel("File Downloader");
-        jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-        jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-        jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
-
-        JLabel jlPrompt = new JLabel("Are you sure you want to download " + fileName + "?");
-        jlPrompt.setFont(new Font("Arial", Font.BOLD, 20));
-        jlPrompt.setBorder(new EmptyBorder(20, 0, 10, 0));
-        jlPrompt.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-
-        JButton jbYes = new JButton("Yes");
-        jbYes.setPreferredSize(new Dimension(150, 75));
-        jbYes.setFont(new Font("Arial", Font.BOLD, 20));
-
-
-        JButton jbNo = new JButton("No");
-        jbNo.setPreferredSize(new Dimension(150, 75));
-        jbNo.setFont(new Font("Arial", Font.BOLD, 20));
-
-        JLabel jlFileContent = new JLabel();
-        jlFileContent.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JPanel jpButtons = new JPanel();
-        jpButtons.setBorder(new EmptyBorder(20, 0, 10, 0));
-        jpButtons.add(jbYes);
-        jpButtons.add(jbNo);
-
-        if (fileExtension.equalsIgnoreCase("txt")) {
-            jlFileContent.setText("<html>" + new String(fileData) + "</html>");
-        } else {
-            jlFileContent.setIcon(new ImageIcon(fileData));
-        }
-
-        jbYes.addActionListener(new ActionListener() {
+    public static MouseListener getMyMouseListener() {
+        return new MouseListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                File fileToDownload = new File("Server File\\" + fileName);
-                fileToDownload.delete();
-                jFrame.dispose();
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
+            public void mouseClicked(MouseEvent e) {
+                JPanel jPanel = (JPanel) e.getSource();
+                int fileId = Integer.parseInt(jPanel.getName());
 
-                    fileOutputStream.write(fileData);
-                    fileOutputStream.close();
+                MyFile[] downloadedfile = new MyFile[0];
+                for (MyFile myFile : downloadedfile) {
 
-                    jFrame.dispose();
-
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+                    if (myFile.getId() == fileId) {
+                        JFrame jfPreview = FileDeleteByServer.createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());
+                        jfPreview.setVisible(true);
+                    }
                 }
-
             }
-        });
 
 
-        jbNo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                jFrame.dispose();
-            }
-        });
-
-        jPanel.add(jlTitle);
-        jPanel.add(jlPrompt);
-        jPanel.add(jlFileContent);
-        jPanel.add(jpButtons);
-        jFrame.add(jPanel);
-
-        return jFrame;
-    }
 
 
     public static void readAllFile() {
