@@ -139,9 +139,9 @@ public class Server {
         ServerSocket serverSocket = new ServerSocket(1212);
         Socket socket = serverSocket.accept();
 
-                allFileOutputStream = socket.getOutputStream();
-                ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
-                objectOutputStream.writeObject(allFiles);
+        allFileOutputStream = socket.getOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
+        objectOutputStream.writeObject(allFiles);
 
         while (true) {
 
