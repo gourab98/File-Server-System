@@ -1,8 +1,8 @@
-Project: File Server System using Socket Programming.
+Project Name: File Server System using Socket Programming.
 
 
 => Names of Project Partner:  Gourab Saha  (Reg: 2017831004)(SWE)
-                           Mehedi Hasan (Reg: 2017831040)(SWE)
+                              Mehedi Hasan (Reg: 2017831040)(SWE)
 
 
 => Run: Please, Open this project with your IDE(intellij). After that setup SDK (java version "14.0.1") and  build and run the Server.java main method. Then build and run the Client.java main method. While Client GUI is visible, please enter the correct IP ADD:"localhost" and the Port Number: "1212", then press connect. There is a pop up console to tell you about your server connection status. Then connection is established, file upload and download can be easily done by the user.  
