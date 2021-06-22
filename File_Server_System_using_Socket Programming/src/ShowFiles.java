@@ -7,10 +7,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ShowFiles extends Client{
+
     public static void showAvailableFiles(){
+
         int[] size = new int[1];
         size[0] = 0;
-        JFrame jFrame1 = new JFrame("All Available Server Files");
+        JFrame jFrame1 = new JFrame("Server Files");
         jFrame1.setSize(600, 600);
         jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
 
@@ -30,13 +32,13 @@ public class ShowFiles extends Client{
 
         jFrame1.setVisible(true);
 
-
+        downloadedfile.clear();
 
         int fileid = 0;
         File dic = new File("Server File/");
         File[] diclist = dic.listFiles();
         int i=0;
-        downloadedfile.clear();
+
 
         for (File file : diclist) {
             i++;
@@ -51,7 +53,6 @@ public class ShowFiles extends Client{
                 MyFile newFile = new MyFile(fileid, FileName, fileContentBytes, getFileExtension(FileName));
                 newFile.setData(fileContentBytes);
 
-
                 downloadedfile.add(newFile);
                 fileid++;
 
@@ -65,6 +66,7 @@ public class ShowFiles extends Client{
 
         size[0] = i;
 
+
         for (MyFile file : downloadedfile) {
 
             JPanel jpFileRow = new JPanel();
@@ -73,25 +75,14 @@ public class ShowFiles extends Client{
             JLabel jlFileName = new JLabel(file.name);
             jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
             jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
-            if (getFileExtension(file.name).equalsIgnoreCase("txt")) {
 
-                jpFileRow.setName((String.valueOf(file.id)));
-                jpFileRow.addMouseListener(getMyMouseListener());
+            jpFileRow.setName((String.valueOf(file.id)));
+            jpFileRow.addMouseListener(getMyMouseListener());
 
-                jpFileRow.add(jlFileName);
-                jPanel.add(jpFileRow);
-                jFrame1.validate();
-            } else {
+            jpFileRow.add(jlFileName);
+            jPanel.add(jpFileRow);
+            jFrame1.validate();
 
-                jpFileRow.setName((String.valueOf(file.id)));
-
-                jpFileRow.addMouseListener(getMyMouseListener());
-
-                jpFileRow.add(jlFileName);
-                jPanel.add(jpFileRow);
-
-                jFrame1.validate();
-            }
         }
     }
 }

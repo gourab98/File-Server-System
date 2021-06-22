@@ -7,7 +7,7 @@ public class ReadFiles extends Server{
 
     public static void readAllFile() {
 
-        int fileId = 0;
+        int fileId = 1; //0
         File dFile = new File("Server File/");
         File[] listOfALLFiles = dFile.listFiles();
 
@@ -36,7 +36,9 @@ public class ReadFiles extends Server{
             }
 
         }
+
     }
+
     public static String getFileExtension(String fileName) {
 
         int i = fileName.lastIndexOf('.');

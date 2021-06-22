@@ -13,15 +13,14 @@ public class Client {
 
     private static String serverName;
     private static int portNumber;
-    public static Socket socket;
+    static int ptrue = 0;
+    public static Socket socket = null;
     public static ArrayList<MyFile> downloadedfile = new ArrayList<>();
     public static ArrayList<MyFile> allFiles = new ArrayList<>();
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         final File[] fileToSend = new File[1];
-        final String[] string3 = new String[1];
-        final int[] b =new int[1];
         int[] size = new int[1];
         size[0] = 0;
 
@@ -42,7 +41,6 @@ public class Client {
         jIplable.setFont(new Font("Arial",Font.BOLD,20));
         jIplable.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-
         JTextField jIp = new JTextField("localhost");
         jIp.setFont(new Font("Arial",Font.ITALIC,20));
         jIp.setPreferredSize(new Dimension(100,50));
@@ -57,7 +55,6 @@ public class Client {
         JLabel jPort = new JLabel("Enter Port : ");
         jPort.setFont(new Font("Arial",Font.BOLD,20));
         jPort.setAlignmentX(Component.LEFT_ALIGNMENT);
-
 
         JTextField jPo = new JTextField("0000");
         jPo.setFont(new Font("Arial",Font.ITALIC,20));
@@ -75,7 +72,6 @@ public class Client {
         jPanel2.add(jPo);
         jPanel3.add(jConnect);
 
-
         JLabel jlFileName = new JLabel("Choose a file to send to the server");
         jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
         jlFileName.setBorder(new EmptyBorder(50, 0, 0, 0));
@@ -84,9 +80,9 @@ public class Client {
         JPanel jpButton = new JPanel();
         jpButton.setBorder(new EmptyBorder(30, 0, 10, 0));
 
-        JButton jbSendFile = new JButton("Upload File");
-        jbSendFile.setPreferredSize(new Dimension(150, 60));
-        jbSendFile.setFont(new Font("Arial", Font.BOLD, 20));
+        JButton jbUploadFile = new JButton("Upload File");
+        jbUploadFile.setPreferredSize(new Dimension(150, 60));
+        jbUploadFile.setFont(new Font("Arial", Font.BOLD, 20));
 
         JButton jbChooseFile = new JButton("Choose File");
         jbChooseFile.setPreferredSize(new Dimension(150, 60));
@@ -99,7 +95,7 @@ public class Client {
         jDownload.setPreferredSize(new Dimension(300,75));
         jDownload.setFont(new Font("Arial",Font.BOLD,20));
 
-        jpButton.add(jbSendFile);
+        jpButton.add(jbUploadFile);
         jpButton.add(jbChooseFile);
 
         jPanel4.add(jDownload);
@@ -107,12 +103,6 @@ public class Client {
         jConnect.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                String string1 = jIp.getText();
-                String string2 = jPo.getText();
-                int  a = Integer.parseInt(string2);
-                string3[0] = string1;
-                b[0] = a;
 
                 serverName = jIp.getText();
                 portNumber= Integer.parseInt(jPo.getText());
@@ -123,17 +113,17 @@ public class Client {
                     ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
                     allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
                     System.out.println(allFiles.size());
-
+                    ptrue = 1;
                 } catch (IOException | ClassNotFoundException ex) {
                     ex.printStackTrace();
                 }
                 System.out.println(serverName);
                 System.out.println(portNumber);
 
-                if(b[0] == 1212){
-                    JOptionPane.showMessageDialog(jFrame,"Connected with server");
-                }else{
+                if (ptrue==0) {
                     JOptionPane.showMessageDialog(jFrame,"Server is not connected");
+                } else {
+                    JOptionPane.showMessageDialog(jFrame,"Connected with server");
                 }
             }
         });
@@ -150,13 +140,8 @@ public class Client {
                 }
             }
         });
-//        socket = new Socket("localhost", 1212);
-//        InputStream inputStream = socket.getInputStream();
-//        ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-//        allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
-//        System.out.println(allFiles.size());
 
-        jbSendFile.addActionListener(new ActionListener() {
+        jbUploadFile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(fileToSend[0]== null){
@@ -165,7 +150,6 @@ public class Client {
                 else {
                     try {
                         FileInputStream fileInputStream = new FileInputStream(fileToSend[0].getAbsolutePath());
-
 
                         DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
 
@@ -191,8 +175,12 @@ public class Client {
         jDownload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ShowFiles.showAvailableFiles();
-
+                if(ptrue==1) {
+                    ShowFiles.showAvailableFiles();
+                }
+                else{
+                    System.out.println("Please Connect to the server, First");
+                }
             }
         });
 
@@ -213,6 +201,7 @@ public class Client {
     }
 
     public static MouseListener getMyMouseListener() {
+
         return new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {

@@ -54,8 +54,12 @@ public class FileDeleteByServer extends Server{
         jbYes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+//                Path filePath=Paths.get("Server File\\" + fileName);
+
                 Path filePath=Paths.get("Server File\\" + fileName);
-                File fileToDelete = new File(String.valueOf(filePath));
+
+//                File fileToDelete = new File(String.valueOf(filePath));
 
                 try
                 {
@@ -65,8 +69,8 @@ public class FileDeleteByServer extends Server{
                     }
                     else
                         System.out.println(fileName+" Deletion Failed");
-
                 }
+
                 catch(NoSuchFileException Fe)
                 {
                     System.out.println("No such file/directory exists");

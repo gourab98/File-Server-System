@@ -8,8 +8,7 @@ import java.io.IOException;
 
 public class ServerFiles extends Server{
     public static void showAvailableFiles(){
-        int[] size = new int[1];
-        size[0] = 0;
+
         JFrame jFrame1 = new JFrame("All Available Server Files");
         jFrame1.setSize(600, 600);
         jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
@@ -30,40 +29,9 @@ public class ServerFiles extends Server{
 
         jFrame1.setVisible(true);
 
-
-
-        int fileid = 0;
-        File dic = new File("Server File/");
-        File[] diclist = dic.listFiles();
-        int i=0;
         allFiles.clear();
+        ReadFiles.readAllFile();
 
-        for (File file : diclist) {
-            i++;
-            try {
-                FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
-                String FileName = file.getName();
-                byte[] fileContentBytes = new byte[(int) file.length()];
-                if ((int) file.length() > 0) {
-                    fileInputStream.read(fileContentBytes);
-                }
-
-                MyFile newFile = new MyFile(fileid, FileName, fileContentBytes, getFileExtension(FileName));
-                newFile.setData(fileContentBytes);
-
-
-                allFiles.add(newFile);
-                fileid++;
-
-                System.out.println(newFile.getId() + " " + newFile.getName() + " " + newFile.getData().length + " " + newFile.getFileExtension());
-            } catch (FileNotFoundException er) {
-                er.printStackTrace();
-            } catch (IOException er) {
-                er.printStackTrace();
-            }
-        }
-
-        size[0] = i;
 
         for (MyFile file : allFiles) {
 
@@ -73,25 +41,13 @@ public class ServerFiles extends Server{
             JLabel jlFileName = new JLabel(file.name);
             jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
             jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
-            if (getFileExtension(file.name).equalsIgnoreCase("txt")) {
 
-                jpFileRow.setName((String.valueOf(file.id)));
-                jpFileRow.addMouseListener(getMyMouseListener());
+            jpFileRow.setName((String.valueOf(file.id)));
+            jpFileRow.addMouseListener(getMyMouseListener());
 
-                jpFileRow.add(jlFileName);
-                jPanel.add(jpFileRow);
-                jFrame1.validate();
-            } else {
-
-                jpFileRow.setName((String.valueOf(file.id)));
-
-                jpFileRow.addMouseListener(getMyMouseListener());
-
-                jpFileRow.add(jlFileName);
-                jPanel.add(jpFileRow);
-
-                jFrame1.validate();
-            }
+            jpFileRow.add(jlFileName);
+            jPanel.add(jpFileRow);
+            jFrame1.validate();
         }
     }
 

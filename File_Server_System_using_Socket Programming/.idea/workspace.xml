@@ -2,10 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/META-INF/File_Server_System_using_Socket Programming.kotlin_module" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server File/musictest.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server File/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/4731c8ca40efbad4f80d51a18f548c11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ClientFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ReadFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ReadFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ServerFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ServerFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientFrame.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileDeleteByServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDeleteByServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReadFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReadFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowFiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +84,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.ServerFiles" />
         <item itemvalue="Application.Client" />
+        <item itemvalue="Application.ServerFiles" />
       </list>
     </recent_temporary>
   </component>
@@ -91,58 +113,73 @@
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623771142739" />
     <state x="1829" y="122" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623773829625" />
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1624346510767" />
-    <state width="1323" height="174" key="GridCell.Tab.0.bottom" timestamp="1624347120978">
+    <state width="1323" height="174" key="GridCell.Tab.0.bottom" timestamp="1624398785362">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623770808850" />
+    <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624390636482" />
     <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1624347120978" />
-    <state width="1323" height="174" key="GridCell.Tab.0.center" timestamp="1624347120978">
+    <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1624398785362" />
+    <state width="1323" height="174" key="GridCell.Tab.0.center" timestamp="1624398785362">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623770808850" />
+    <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624390636482" />
     <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1624347120978" />
-    <state width="1323" height="174" key="GridCell.Tab.0.left" timestamp="1624347120978">
+    <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1624398785362" />
+    <state width="1323" height="174" key="GridCell.Tab.0.left" timestamp="1624398785362">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623770808849" />
+    <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624390636482" />
     <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1624347120978" />
-    <state width="1323" height="174" key="GridCell.Tab.0.right" timestamp="1624347120978">
+    <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1624398785362" />
+    <state width="1323" height="174" key="GridCell.Tab.0.right" timestamp="1624398785362">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623770808850" />
+    <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624390636482" />
     <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1624347120978" />
-    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1623747353309">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1624398785362" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1624398785348">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624383133845" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353309" />
-    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1623747353309">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="223" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1624398785348" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center" timestamp="1624398785348">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624383133845" />
     <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353309" />
-    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1623747353309">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="223" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1624398785348" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left" timestamp="1624398785347">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624383133845" />
     <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353309" />
-    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1623747353309">
-      <screen x="1366" y="0" width="1366" height="728" />
+    <state width="1323" height="223" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1624398785347" />
+    <state width="1323" height="223" key="GridCell.Tab.1.right" timestamp="1624398785348">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624383133845" />
     <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353309" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1624346942124">
+    <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1624398785348" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1624398881189">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623765057735" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1624346942124" />
-    <state x="-105" y="57" width="1055" height="715" maximized="true" key="dock-window-1" timestamp="1623767542357">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="-105" y="57" width="1055" height="715" maximized="true" key="dock-window-1/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623767542357" />
-    <state x="1712" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1623734510511">
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624380151188" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1624398881188" />
+    <state x="1524" y="0" width="1020" height="715" maximized="true" key="dock-window-1" timestamp="1624382911204">
       <screen x="1366" y="0" width="1366" height="728" />
     </state>
+    <state x="1524" y="0" width="1020" height="715" maximized="true" key="dock-window-1/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624382911204" />
+    <state x="-105" y="57" width="1055" height="715" maximized="true" key="dock-window-1/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623767542357" />
+    <state x="1659" y="0" width="1020" height="513" maximized="true" key="dock-window-2" timestamp="1624391485316">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="1659" y="0" width="1020" height="513" maximized="true" key="dock-window-2/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624389928027" />
+    <state x="1659" y="0" width="1020" height="513" maximized="true" key="dock-window-2/0.0.1366.728@0.0.1366.728" timestamp="1624391485316" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1624390124269">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624390124269" />
     <state x="1712" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623734510511" />
   </component>
 </project>
