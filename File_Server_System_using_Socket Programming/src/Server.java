@@ -65,10 +65,10 @@ public class Server {
         jDownload.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ShowFiles.showAvailableFiles();
+                ServerFiles.showAvailableFiles();
             }
         });
-        readAllFile();
+        ReadFiles.readAllFile();
 
         ServerSocket serverSocket = new ServerSocket(1212);
 
@@ -125,7 +125,7 @@ public class Server {
 
                         myFiles.add(new MyFile(fileId, fileName, fileContentBytes, getFileExtension(fileName)));
                         fileId++;
-                        readAllFile();
+                        ReadFiles.readAllFile();
 
                         File fileToDownload = new File("Server File/"+fileName);
 
@@ -143,13 +143,9 @@ public class Server {
 
     public static String getFileExtension(String fileName) {
 
-        int i = fileName.lastIndexOf('.');
-        if (i > 0) {
-            return fileName.substring(i + 1);
-        } else {
-            return "No extension found.";
-        }
+        return FileExtension.getExtension(fileName);
     }
+
     public static MouseListener getMyMouseListener() {
         return new MouseListener() {
             @Override
@@ -157,49 +153,36 @@ public class Server {
                 JPanel jPanel = (JPanel) e.getSource();
                 int fileId = Integer.parseInt(jPanel.getName());
 
-                MyFile[] downloadedfile = new MyFile[0];
-                for (MyFile myFile : downloadedfile) {
+                for (MyFile myFile : allFiles) {
 
                     if (myFile.getId() == fileId) {
+                        System.out.println(myFile.id);
                         JFrame jfPreview = FileDeleteByServer.createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());
                         jfPreview.setVisible(true);
                     }
                 }
             }
 
+            @Override
+            public void mousePressed(MouseEvent e) {
 
-
-
-    public static void readAllFile() {
-
-        int fileId = 0;
-        File dFile = new File("Server File/");
-        File[] listOfALLFiles = dFile.listFiles();
-
-        for(File file : listOfALLFiles){
-
-            try {
-
-                FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
-                String fileName = file.getName();
-                byte[] fileContentBytes = new byte[(int) file.length()];
-                if((int) file.length() > 0){
-                    fileInputStream.read(fileContentBytes);
-                }
-
-                MyFile newFile = new MyFile(fileId, fileName, fileContentBytes, getFileExtension(fileName));
-                newFile.setData(fileContentBytes);
-                allFiles.add(newFile);
-                fileId++;
-
-                System.out.println(newFile.getId()+" "+ newFile.getName()+" "+newFile.getName().length()+ " "+ newFile.getFileExtension());
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
             }
 
-        }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        };
     }
+
 }

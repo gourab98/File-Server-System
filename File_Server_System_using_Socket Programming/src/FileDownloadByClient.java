@@ -11,13 +11,13 @@ public class FileDownloadByClient  extends Client{
     public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension) {
 
 
-        JFrame jFrame = new JFrame("File Deletor");
+        JFrame jFrame = new JFrame("Download file");
         jFrame.setSize(800, 800);
 
         JPanel jPanel = new JPanel();
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
 
-        JLabel jlTitle = new JLabel("File Deletor");
+        JLabel jlTitle = new JLabel("File Downloader");
         jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
         jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
         jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
@@ -50,13 +50,11 @@ public class FileDownloadByClient  extends Client{
         } else {
             jlFileContent.setIcon(new ImageIcon(fileData));
         }
-
+        System.out.println("IN FD ............."+fileName + ".......data... "+fileData);
         jbYes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                File fileToDownload = new File("Server File\\" + fileName);
-                fileToDownload.delete();
-                jFrame.dispose();
+                File fileToDownload = new File("Client File/" + fileName);
                 try {
                     FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
 

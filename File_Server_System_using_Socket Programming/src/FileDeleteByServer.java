@@ -3,9 +3,11 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Paths;
 
 public class FileDeleteByServer extends Server{
 
@@ -29,10 +31,10 @@ public class FileDeleteByServer extends Server{
         jlPrompt.setAlignmentX(Component.CENTER_ALIGNMENT);
 
 
-        JButton jbYes = new JButton("Yes");
+        JButton jbYes = new JButton("Delete");
         jbYes.setPreferredSize(new Dimension(150, 75));
         jbYes.setFont(new Font("Arial", Font.BOLD, 20));
-
+        jbYes.setBackground(Color.RED);
 
         JButton jbNo = new JButton("No");
         jbNo.setPreferredSize(new Dimension(150, 75));
@@ -55,20 +57,36 @@ public class FileDeleteByServer extends Server{
         jbYes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                File fileToDownload = new File("Server File\\" + fileName);
-                fileToDownload.delete();
-                jFrame.dispose();
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
 
-                    fileOutputStream.write(fileData);
-                    fileOutputStream.close();
-
-                    jFrame.dispose();
-
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+              File fileToDelete = new File("Server File\\" + fileName);
+                fileToDelete= fileToDelete.getAbsoluteFile();
+                fileToDelete.deleteOnExit();
+                String PathString =fileToDelete.getAbsolutePath();
+                System.out.println(fileToDelete.getAbsolutePath());
+                File selectFiletoDelete =new File(PathString);
+                try
+                {
+                    Files.deleteIfExists(Paths.get(PathString));
                 }
+                catch(NoSuchFileException Fe)
+                {
+                    System.out.println("No such file/directory exists");
+                }
+                catch(DirectoryNotEmptyException Fe)
+                {
+                    System.out.println("Directory is not empty.");
+                }
+                catch(IOException Fe)
+                {
+                    System.out.println("Invalid permissions.");
+                }
+
+              if (selectFiletoDelete.delete()){
+                  System.out.println("File Deleted");
+              }
+              else
+                  System.out.println("File Deletion Failed");
+
 
             }
         });
