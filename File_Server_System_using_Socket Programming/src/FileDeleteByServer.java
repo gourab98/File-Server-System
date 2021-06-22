@@ -4,10 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.nio.file.DirectoryNotEmptyException;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Paths;
+import java.nio.file.*;
 
 public class FileDeleteByServer extends Server{
 
@@ -57,16 +54,18 @@ public class FileDeleteByServer extends Server{
         jbYes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Path filePath=Paths.get("Server File\\" + fileName);
+                File fileToDelete = new File(String.valueOf(filePath));
 
-              File fileToDelete = new File("Server File\\" + fileName);
-                fileToDelete= fileToDelete.getAbsoluteFile();
-                fileToDelete.deleteOnExit();
-                String PathString =fileToDelete.getAbsolutePath();
-                System.out.println(fileToDelete.getAbsolutePath());
-                File selectFiletoDelete =new File(PathString);
                 try
                 {
-                    Files.deleteIfExists(Paths.get(PathString));
+                    if (Files.deleteIfExists(filePath)){
+                        System.out.println(fileName+ " Deleted Succesfully");
+                        jFrame.dispose();
+                    }
+                    else
+                        System.out.println(fileName+" Deletion Failed");
+
                 }
                 catch(NoSuchFileException Fe)
                 {
@@ -80,13 +79,6 @@ public class FileDeleteByServer extends Server{
                 {
                     System.out.println("Invalid permissions.");
                 }
-
-              if (selectFiletoDelete.delete()){
-                  System.out.println("File Deleted");
-              }
-              else
-                  System.out.println("File Deletion Failed");
-
 
             }
         });
