@@ -55,16 +55,17 @@ public class FileDeleteByServer extends Server{
             @Override
             public void actionPerformed(ActionEvent e) {
 
-//                Path filePath=Paths.get("Server File\\" + fileName);
+//                final String file =System.getProperty("Server File\\" + fileName);
+//                final Path filePath= new File(file).toPath();
 
                 Path filePath=Paths.get("Server File\\" + fileName);
-
-//                File fileToDelete = new File(String.valueOf(filePath));
+                File fileToDelete = new File(String.valueOf(filePath));
 
                 try
                 {
                     if (Files.deleteIfExists(filePath)){
-                        System.out.println(fileName+ " Deleted Succesfully");
+                        JOptionPane.showMessageDialog(jFrame,"Deleted Successfully");
+                        System.out.println(fileName+ " Deleted Successfully");
                         jFrame.dispose();
                     }
                     else
@@ -78,6 +79,11 @@ public class FileDeleteByServer extends Server{
                 catch(DirectoryNotEmptyException Fe)
                 {
                     System.out.println("Directory is not empty.");
+                }
+                catch(FileSystemException Fe){
+                    System.out.println("Access Denied.");
+                    JOptionPane.showMessageDialog(jFrame,"Throwing java File System Exception","Delete Failed",JOptionPane.WARNING_MESSAGE);
+//                    System.out.println(Fe);
                 }
                 catch(IOException Fe)
                 {
