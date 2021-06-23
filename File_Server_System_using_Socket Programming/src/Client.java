@@ -181,6 +181,7 @@ public class Client {
                 else{
                     System.out.println("Please Connect to the server, First");
                 }
+                JOptionPane.showMessageDialog(jFrame,"Please Connect to the server, First");
             }
         });
 

@@ -13,11 +13,10 @@ import java.util.ArrayList;
 public class Server {
 
     static OutputStream allFileOutputStream;
-    public static int portNumber = 1111;
     static ArrayList<MyFile> allFiles = new ArrayList<>();
     static ArrayList<MyFile> myFiles = new ArrayList<>();
     public static int serverPortNumber;
-
+    public static int showButtonPress=0;
     public static void main(String[] args) throws IOException {
 
         int fileId = 1; //0
@@ -33,6 +32,7 @@ public class Server {
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
 
         JScrollPane jScrollPane = new JScrollPane(jPanel);
+        jScrollPane.setPreferredSize(new Dimension(250,400));
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
         JLabel jlTitle = new JLabel("Server File GUI");
@@ -73,19 +73,34 @@ public class Server {
 
 
         JPanel jPanel1 = new JPanel();
-        jPanel1.setBorder(new EmptyBorder(2,0,0,0));
+        //  jPanel1.setBorder(new EmptyBorder(2,0,0,0));
 
-        JButton jDownload = new JButton("All Available Server Files");
-        jDownload.setPreferredSize(new Dimension(250,500));
-        jDownload.setFont(new Font("Arial", Font.BOLD, 15));
-        jDownload.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JButton jshowFiles = new JButton("All Available Server Files");
+        jshowFiles.setPreferredSize(new Dimension(250,50));
+        jshowFiles.setFont(new Font("Arial", Font.BOLD, 15));
+        jshowFiles.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        jPanel1.add(jshowFiles);
+
+        JPanel jPanel3 = new JPanel();
+        jPanel3.setBorder(new EmptyBorder(0,0,0,0));
+
+        JButton jDeleteFiles = new JButton("Delete Server Files");
+        jDeleteFiles.setPreferredSize(new Dimension(250,50));
+        jDeleteFiles.setFont(new Font("Arial", Font.BOLD, 15));
+        jDeleteFiles.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        jDeleteFiles.setBackground(Color.red);
+
+        jPanel3.add(jDeleteFiles);
+
 
         jFrame.add(jlTitle);
         jFrame.add(waitClient);
         jFrame.add(jPanel2);
- //       jFrame.add(jPanel3);
+        //       jFrame.add(jPanel3);
         jFrame.add(jPanel1);
-        jPanel.add(jDownload);
+        // jPanel.add(jshowFiles);
+        jFrame.add(jPanel3);
         jFrame.add(jScrollPane);
         jFrame.setVisible(true);
 
@@ -100,24 +115,33 @@ public class Server {
 //            }
 //        });
 //
-        jDownload.addActionListener(new ActionListener() {
+        jshowFiles.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                showButtonPress=1;
                 ServerFiles.showAvailableFiles();
             }
         });
+        jDeleteFiles.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                showButtonPress=0;
+                ServerFiles.showAvailableFiles();
+            }
+        });
+
 
         ReadFiles.readAllFile();
 
         serverPortNumber= 1212;
         ServerSocket serverSocket = new ServerSocket(serverPortNumber);
 
-            Socket socket = serverSocket.accept();
-            waitClient.setText("Client is Connected");
+        Socket socket = serverSocket.accept();
+        waitClient.setText("Client is Connected");
 
-            allFileOutputStream = socket.getOutputStream();
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
-            objectOutputStream.writeObject(allFiles);
+        allFileOutputStream = socket.getOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
+        objectOutputStream.writeObject(allFiles);
 
 
         while (true) {
@@ -197,7 +221,7 @@ public class Server {
 
                     if (myFile.getId() == fileId) {
                         System.out.println(myFile.id);
-                        JFrame jfPreview = FileDeleteByServer.createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());
+                        JFrame jfPreview = FileDeleteByServer.createFrame(myFile.getId(),myFile.getName(), myFile.getData(), myFile.getFileExtension());
                         jfPreview.setVisible(true);
                     }
                 }

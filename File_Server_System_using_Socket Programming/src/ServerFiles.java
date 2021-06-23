@@ -43,8 +43,9 @@ public class ServerFiles extends Server{
             jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
 
             jpFileRow.setName((String.valueOf(file.id)));
-            jpFileRow.addMouseListener(getMyMouseListener());
-
+            if(showButtonPress==0) {
+                jpFileRow.addMouseListener(getMyMouseListener());
+            }
             jpFileRow.add(jlFileName);
             jPanel.add(jpFileRow);
             jFrame1.validate();

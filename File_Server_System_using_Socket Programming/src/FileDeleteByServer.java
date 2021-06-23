@@ -8,7 +8,7 @@ import java.nio.file.*;
 
 public class FileDeleteByServer extends Server{
 
-   public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension) {
+    public static JFrame createFrame(int id,String fileName, byte[] fileData, String fileExtension) {
 
 
         JFrame jFrame = new JFrame("File Deletor");
