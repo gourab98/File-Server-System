@@ -62,6 +62,7 @@ public class FileDownloadByClient  extends Client{
                     fileOutputStream.close();
 
                     jFrame.dispose();
+                    JOptionPane.showMessageDialog(jFrame,"File Downloaded");
 
                 } catch (IOException ex) {
                     ex.printStackTrace();

@@ -83,8 +83,7 @@ public class FileDeleteByServer extends Server{
                 catch(FileSystemException Fe){
                     System.out.println(Fe);
                     System.out.println("Access Denied.");
-                    JOptionPane.showMessageDialog(jFrame,"Throwing java File System Exception","Delete Failed",JOptionPane.WARNING_MESSAGE);
-//                    System.out.println(Fe);
+                    JOptionPane.showMessageDialog(jFrame,Fe,"Delete Failed",JOptionPane.WARNING_MESSAGE);
                 }
                 catch(IOException Fe)
                 {
