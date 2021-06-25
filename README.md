@@ -22,9 +22,29 @@ Please, Open this project with your IDE(intellij). After that setup SDK (java ve
 ## Project Details: 
 This project is built with TCP/IP Socket Programming in Java. It can transfer files among computers which are connected in the same network. It provides user interface created with Java AWT and Java Swing. This java application can transfer .txt, .xlsx,.pdf, image files, .mp4 and other video and audio format files. The application shows the files and directories present in the server working directory and allows the client to select files and download them in the client system. It also allows the client to upload files to the server working directory.
 
+### Client
+***
+![alt Client](https://github.com/gourab98/File-Server-System/blob/main/Screenshot/Client.PNG)
 
+### Server
+***
+![alt Server](https://github.com/gourab98/File-Server-System/blob/main/Screenshot/Server.PNG)
 
+### Client Connected
+***
+![alt Client Connected](https://github.com/gourab98/File-Server-System/blob/main/Screenshot/ClientConnect.PNG)
 
+### Server Files
+***
+![alt Server Files](https://github.com/gourab98/File-Server-System/blob/main/Screenshot/ServerFileList.PNG)
+
+### Delete From Server
+***
+![alt Delete From Server](https://github.com/gourab98/File-Server-System/blob/main/Screenshot/DeleteByServer.PNG)
+
+### Server And Client(Download from Server)
+***
+![alt Server And Client](https://github.com/gourab98/File-Server-System/blob/main/Screenshot/ClientandServer.PNG)
 
  
 
