@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Client File/Picasa 3.lnk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server File/KMPlayer.lnk" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server File/maxresdefault.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server File/test.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/Facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/Instagram.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/card1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/card3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/musictest.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ServerFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ServerFiles.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileDeleteByServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDeleteByServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +45,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1tyBhdnU2MKUqZGepds8dvu3Z18" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -79,6 +105,9 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="1641" y="25" key="#Project_Structure" timestamp="1623731613070">
       <screen x="1366" y="0" width="1366" height="728" />
@@ -90,30 +119,30 @@
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1623771142739" />
     <state x="1829" y="122" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623773829625" />
     <state x="463" y="122" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1624346510767" />
-    <state width="1323" height="174" key="GridCell.Tab.0.bottom" timestamp="1624524557332">
+    <state width="1323" height="100" key="GridCell.Tab.0.bottom" timestamp="1624625100232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624524557332" />
+    <state width="1323" height="100" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624527394320" />
     <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1624402013269" />
-    <state width="1323" height="174" key="GridCell.Tab.0.center" timestamp="1624524557331">
+    <state width="1323" height="100" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1624625100232" />
+    <state width="1323" height="100" key="GridCell.Tab.0.center" timestamp="1624625100232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624524557331" />
+    <state width="1323" height="100" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624527394319" />
     <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1624402013269" />
-    <state width="1323" height="174" key="GridCell.Tab.0.left" timestamp="1624524557331">
+    <state width="1323" height="100" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1624625100232" />
+    <state width="1323" height="100" key="GridCell.Tab.0.left" timestamp="1624625100232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624524557331" />
+    <state width="1323" height="100" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624527394319" />
     <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1624402013269" />
-    <state width="1323" height="174" key="GridCell.Tab.0.right" timestamp="1624524557331">
+    <state width="1323" height="100" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1624625100232" />
+    <state width="1323" height="100" key="GridCell.Tab.0.right" timestamp="1624625100232">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624524557331" />
+    <state width="1323" height="100" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624527394319" />
     <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623772818017" />
-    <state width="1323" height="174" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1624402013269" />
+    <state width="1323" height="100" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1624625100232" />
     <state width="1323" height="223" key="GridCell.Tab.1.bottom" timestamp="1624398785348">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -138,11 +167,11 @@
     <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624383133845" />
     <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623747353309" />
     <state width="1323" height="223" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1624398785348" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1624521559057">
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1624624675897">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624521559057" />
-    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1624399804876" />
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1624624675897" />
     <state x="1524" y="0" width="1020" height="715" maximized="true" key="dock-window-1" timestamp="1624382911204">
       <screen x="1366" y="0" width="1366" height="728" />
     </state>

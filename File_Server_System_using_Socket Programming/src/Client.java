@@ -146,7 +146,6 @@ public class Client {
             public void actionPerformed(ActionEvent e) {
                 if(fileToSend[0]== null){
 
-                    jlFileName.setText("Please choose a file first.");
                     JOptionPane.showMessageDialog(jFrame,"Please choose a file first","Choose First",JOptionPane.WARNING_MESSAGE);
                 }
                 else {

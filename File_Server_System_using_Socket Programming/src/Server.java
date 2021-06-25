@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class Server {
 
-    static OutputStream allFileOutputStream;
+
     static ArrayList<MyFile> allFiles = new ArrayList<>();
     static ArrayList<MyFile> myFiles = new ArrayList<>();
     public static int serverPortNumber;
@@ -54,26 +54,9 @@ public class Server {
         jPort.setFont(new Font("Arial",Font.BOLD,20));
         jPort.setAlignmentX(Component.LEFT_ALIGNMENT);
 
-//        JTextField jPo = new JTextField("1212");
-//        jPo.setFont(new Font("Arial",Font.ITALIC,20));
-//        jPo.setPreferredSize(new Dimension(100,50));
-//
-//        JPanel jPanel3 = new JPanel();
-//        jPanel3.setBorder(new EmptyBorder(1,0,0,0));
-//
-//        JButton jConnect = new JButton("Confirm");
-//        jConnect.setPreferredSize(new Dimension(150,50));
-//        jConnect.setFont(new Font("Arial",Font.BOLD,18));
-//        jConnect.setAlignmentX(Component.CENTER_ALIGNMENT);
-
         jPanel2.add(jPort);
-//        jPanel2.add(jPo);
-//        jPanel3.add(jConnect);
-
-
 
         JPanel jPanel1 = new JPanel();
-        //  jPanel1.setBorder(new EmptyBorder(2,0,0,0));
 
         JButton jshowFiles = new JButton("All Available Server Files");
         jshowFiles.setPreferredSize(new Dimension(250,50));
@@ -97,24 +80,12 @@ public class Server {
         jFrame.add(jlTitle);
         jFrame.add(waitClient);
         jFrame.add(jPanel2);
-        //       jFrame.add(jPanel3);
         jFrame.add(jPanel1);
-        // jPanel.add(jshowFiles);
         jFrame.add(jPanel3);
         jFrame.add(jScrollPane);
         jFrame.setVisible(true);
 
 
-//        jConnect.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                portNumber= Integer.parseInt(jPo.getText());
-//                System.out.println(portNumber);
-//                JOptionPane.showMessageDialog(jFrame,"Port number of this server is "+ portNumber);
-//            }
-//        });
-//
         jshowFiles.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -139,7 +110,7 @@ public class Server {
         Socket socket = serverSocket.accept();
         waitClient.setText("Client is Connected");
 
-        allFileOutputStream = socket.getOutputStream();
+        OutputStream allFileOutputStream = socket.getOutputStream();
         ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
         objectOutputStream.writeObject(allFiles);
 
