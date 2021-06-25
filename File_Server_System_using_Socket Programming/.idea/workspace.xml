@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/Client File/Picasa 3.lnk" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Server File/KMPlayer.lnk" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Server File/maxresdefault.jpg" afterDir="false" />
@@ -28,6 +29,20 @@
       <change beforePath="$PROJECT_DIR$/src/FileDeleteByServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDeleteByServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerFiles.java" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Client File/Twitter.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/Facebook.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server File/TextServer.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/META-INF/File_Server_System_using_Socket Programming.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileDeleteByServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDeleteByServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileDownloadByClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDownloadByClient.java" afterDir="false" />
+>>>>>>> 86b34271664579f2885deb8f14c12786ca90f286
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +65,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -92,6 +106,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -105,6 +120,7 @@
     </task>
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
@@ -187,5 +203,20 @@
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624390124269" />
     <state x="1712" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623734510511" />
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+>>>>>>> 86b34271664579f2885deb8f14c12786ca90f286
   </component>
 </project>
