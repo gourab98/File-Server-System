@@ -66,25 +66,9 @@ public class Client {
             public void actionPerformed(ActionEvent e) {
                 serverName = jIp.getText();
                 portNumber= Integer.parseInt(jPo.getText());
-
-                try {
-                    socket = new Socket(serverName, portNumber);
-                    InputStream inputStream = socket.getInputStream();
-                    ObjectInputStream objectInputStream = new ObjectInputStream(inputStream);
-                    allFiles = (ArrayList<MyFile>) objectInputStream.readObject();
-                    System.out.println(allFiles.size());
-                    ptrue = 1;
-                } catch (IOException | ClassNotFoundException ex) {
-                    ex.printStackTrace();
-                }
-                System.out.println(serverName);
-                System.out.println(portNumber);
-
-                if (ptrue==0) {
-                    JOptionPane.showMessageDialog(jFrame,"Server is not connected");
-                } else {
-                    JOptionPane.showMessageDialog(jFrame,"Connected with server");
-                }
+                ClientConnection clientConnection=new ClientConnection();
+                socket = clientConnection.getClientConnected(serverName,portNumber,allFiles,ptrue,jFrame);
+                ptrue=clientConnection.getPTrue();
             }
         });
 
@@ -105,7 +89,6 @@ public class Client {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(fileToSend[0]== null){
-
                     jlFileName.setText("Please choose a file first.");
                     JOptionPane.showMessageDialog(jFrame,"Please choose a file first","Choose First",JOptionPane.WARNING_MESSAGE);
                 }
@@ -142,11 +125,10 @@ public class Client {
                 }
                 else{
                     System.out.println("Please Connect to the server, First");
-                    JOptionPane.showMessageDialog(jFrame,"Please Connect to the server, First","Connet First",JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(jFrame,"Please Connect to the server, First","Connect First",JOptionPane.WARNING_MESSAGE);
                 }
             }
         });
-
         jFrame.add(jlTitle);
         jFrame.add(jPanel);
         jFrame.add(jPanel2);
@@ -159,46 +141,29 @@ public class Client {
     }
 
     public static String getFileExtension(String fileName) {
-
         return FileExtension.getExtension(fileName);
     }
-
     public static MouseListener getMyMouseListener() {
-
         return new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JPanel jPanel = (JPanel) e.getSource();
                 int fileId = Integer.parseInt(jPanel.getName());
-
                 for (MyFile myFile : downloadedfile) {
-
                     if (myFile.getId() == fileId) {
                         JFrame jfPreview = FileDownloadByClient.createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());
                         jfPreview.setVisible(true);
                     }
                 }
             }
-
             @Override
-            public void mousePressed(MouseEvent e) {
-
-            }
-
+            public void mousePressed(MouseEvent e) { }
             @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
+            public void mouseReleased(MouseEvent e) { }
             @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
+            public void mouseEntered(MouseEvent e) { }
             @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
+            public void mouseExited(MouseEvent e) { }
         };
     }
 }
