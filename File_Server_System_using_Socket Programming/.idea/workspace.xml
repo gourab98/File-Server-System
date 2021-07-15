@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="Client Connection bug fixed">
-      <change afterPath="$PROJECT_DIR$/src/FileUploader.java" afterDir="false" />
+    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="File Uploader Added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowFiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +134,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626337205995</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="File Uploader Added">
+      <created>1626341410699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1626341410699</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,7 +164,8 @@
     <MESSAGE value="File Download" />
     <MESSAGE value="Strategy Pattern Bug Fixed" />
     <MESSAGE value="Client Connection bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Client Connection bug fixed" />
+    <MESSAGE value="File Uploader Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="File Uploader Added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

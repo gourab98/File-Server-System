@@ -19,13 +19,13 @@ public class ShowFiles extends Client{
         jFrame1.add(jScrollPane);
         jFrame1.setVisible(true);
 
-        downloadedfile.clear();
+        downloadedFile.clear();
 
-        int fileid = 0;
+        int fileId = 0;
         File dic = new File("Server File/");
-        File[] diclist = dic.listFiles();
+        File[] dicList = dic.listFiles();
         int i=0;
-        for (File file : diclist) {
+        for (File file : dicList) {
             i++;
             try {
                 FileInputStream fileInputStream = new FileInputStream(file.getAbsolutePath());
@@ -34,10 +34,10 @@ public class ShowFiles extends Client{
                 if ((int) file.length() > 0) {
                     fileInputStream.read(fileContentBytes);
                 }
-                MyFile newFile = new MyFile(fileid, FileName, fileContentBytes, getFileExtension(FileName));
+                MyFile newFile = new MyFile(fileId, FileName, fileContentBytes, FileExtension.getExtension(FileName));
                 newFile.setData(fileContentBytes);
-                downloadedfile.add(newFile);
-                fileid++;
+                downloadedFile.add(newFile);
+                fileId++;
                 System.out.println(newFile.getId() + " " + newFile.getName() + " " + newFile.getData().length + " " + newFile.getFileExtension());
             } catch (FileNotFoundException er) {
                 er.printStackTrace();
@@ -45,9 +45,8 @@ public class ShowFiles extends Client{
                 er.printStackTrace();
             }
         }
-
         size[0] = i;
-        for (MyFile file : downloadedfile) {
+        for (MyFile file : downloadedFile) {
             JPanel jpFileRow = new JPanel();
             jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
             JLabel jlFileName = showFrame.getJLabel(file.name);
@@ -56,7 +55,6 @@ public class ShowFiles extends Client{
             jpFileRow.add(jlFileName);
             jPanel.add(jpFileRow);
             jFrame1.validate();
-
         }
     }
 }

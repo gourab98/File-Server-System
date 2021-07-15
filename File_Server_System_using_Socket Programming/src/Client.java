@@ -15,7 +15,7 @@ public class Client {
     private static int portNumber;
     static int ptrue = 0;
     public static Socket socket = null;
-    public static ArrayList<MyFile> downloadedfile = new ArrayList<>();
+    public static ArrayList<MyFile> downloadedFile = new ArrayList<>();
     public static ArrayList<MyFile> allFiles = new ArrayList<>();
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -83,15 +83,13 @@ public class Client {
                 }
             }
         });
-
         jbUploadFile.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if(fileToSend[0]== null){
                     jlFileName.setText("Please choose a file first.");
                     JOptionPane.showMessageDialog(jFrame,"Please choose a file first","Choose First",JOptionPane.WARNING_MESSAGE);
-                }
-                else {
+                } else {
                     FileUploader fileUploader=new FileUploader();
                     fileUploader.uploadFile(fileToSend[0],socket);
                 }
@@ -120,19 +118,15 @@ public class Client {
         jFrame.setVisible(true);
 
     }
-
-    public static String getFileExtension(String fileName) {
-        return FileExtension.getExtension(fileName);
-    }
     public static MouseListener getMyMouseListener() {
         return new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 JPanel jPanel = (JPanel) e.getSource();
                 int fileId = Integer.parseInt(jPanel.getName());
-                for (MyFile myFile : downloadedfile) {
+                for (MyFile myFile : downloadedFile) {
                     if (myFile.getId() == fileId) {
-                        JFrame jfPreview = FileDownloadByClient.createFrame(myFile.getName(), myFile.getData(), myFile.getFileExtension());
+                        JFrame jfPreview = FileDownloadByClient.createFrame(myFile.getName(), myFile.getData(), FileExtension.getExtension(myFile.getName()));
                         jfPreview.setVisible(true);
                     }
                 }
