@@ -64,10 +64,8 @@ public class Client {
         jConnect.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 serverName = jIp.getText();
                 portNumber= Integer.parseInt(jPo.getText());
-
 
                 try {
                     socket = new Socket(serverName, portNumber);
