@@ -77,7 +77,6 @@ public class Client {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser jFileChooser = new JFileChooser();
                 jFileChooser.setDialogTitle("Choose a file to send");
-
                 if(jFileChooser.showOpenDialog(null)== JFileChooser.APPROVE_OPTION){
                     fileToSend[0] = jFileChooser.getSelectedFile();
                     jlFileName.setText("The file you want to send is "+ fileToSend[0].getName());
@@ -93,26 +92,8 @@ public class Client {
                     JOptionPane.showMessageDialog(jFrame,"Please choose a file first","Choose First",JOptionPane.WARNING_MESSAGE);
                 }
                 else {
-                    try {
-                        FileInputStream fileInputStream = new FileInputStream(fileToSend[0].getAbsolutePath());
-
-                        DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-
-                        String fileName = fileToSend[0].getName();
-                        byte[] fileNameBytes = fileName.getBytes();
-                        byte[] fileContentBytes = new byte[(int) fileToSend[0].length()];
-
-                        fileInputStream.read(fileContentBytes);
-
-                        dataOutputStream.writeInt(fileNameBytes.length);
-                        dataOutputStream.write(fileNameBytes);
-
-                        dataOutputStream.writeInt(fileContentBytes.length);
-                        dataOutputStream.write(fileContentBytes);
-
-                    } catch (IOException error){
-                        error.printStackTrace();
-                    }
+                    FileUploader fileUploader=new FileUploader();
+                    fileUploader.uploadFile(fileToSend[0],socket);
                 }
             }
         });
