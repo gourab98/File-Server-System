@@ -10,7 +10,6 @@ import java.io.IOException;
 public class FileDownloadByClient  extends Client{
     public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension) {
 
-
         JFrame jFrame = new JFrame("Download file");
         jFrame.setSize(800, 800);
 

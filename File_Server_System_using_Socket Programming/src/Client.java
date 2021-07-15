@@ -24,80 +24,41 @@ public class Client {
         int[] size = new int[1];
         size[0] = 0;
 
-        JFrame jFrame = new JFrame("Client GUI");
-        jFrame.setSize(700,700);
-        jFrame.setLayout(new BoxLayout(jFrame.getContentPane(),BoxLayout.Y_AXIS));
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        JLabel jlTitle = new JLabel("Client GUI");
-        jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-        jlTitle.setBorder(new EmptyBorder(20,0,10,0));
-        jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JPanel jPanel = new JPanel();
-        jPanel.setBorder(new EmptyBorder(10,0,10,0));
-
-        JLabel jIplable = new JLabel("Enter IP : ");
-        jIplable.setFont(new Font("Arial",Font.BOLD,20));
+        FrameElement clientFrame =new FrameElement();
+        JFrame jFrame = clientFrame.getJFrame("Client GUI");
+        JLabel jlTitle = clientFrame.getJLabel("I am Client");
+         //Panel 1
+        JPanel jPanel = clientFrame.getJPanelType1(10,0,10,0);
+        JLabel jIplable = clientFrame.getJLabel("Enter IP : ");
         jIplable.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-        JTextField jIp = new JTextField("localhost");
-        jIp.setFont(new Font("Arial",Font.ITALIC,20));
-        jIp.setPreferredSize(new Dimension(100,50));
+        JTextField jIp = clientFrame.getJTextField("localhost");
         jIp.setAlignmentX(Component.LEFT_ALIGNMENT);
-
         jPanel.add(jIplable);
         jPanel.add(jIp);
-
-        JPanel jPanel2 = new JPanel();
-        jPanel2.setBorder(new EmptyBorder(3,0,0,0));
-
-        JLabel jPort = new JLabel("Enter Port : ");
-        jPort.setFont(new Font("Arial",Font.BOLD,20));
+        //Panel 2
+        JPanel jPanel2 = clientFrame.getJPanelType1(3,0,0,0);
+        JLabel jPort = clientFrame.getJLabel("Enter Port : ");
         jPort.setAlignmentX(Component.LEFT_ALIGNMENT);
-
-        JTextField jPo = new JTextField("0000");
-        jPo.setFont(new Font("Arial",Font.ITALIC,20));
-        jPo.setPreferredSize(new Dimension(100,50));
-
-        JPanel jPanel3 = new JPanel();
-        jPanel3.setBorder(new EmptyBorder(3,0,0,0));
-
-        JButton jConnect = new JButton("Connect");
-        jConnect.setPreferredSize(new Dimension(150,50));
-        jConnect.setFont(new Font("Arial",Font.BOLD,18));
-        jConnect.setAlignmentX(Component.CENTER_ALIGNMENT);
-
+        JTextField jPo = clientFrame.getJTextField("0000");
         jPanel2.add(jPort);
         jPanel2.add(jPo);
+        //Panel 2
+        JPanel jPanel3 = clientFrame.getJPanelType1(3,0,0,0);
+        JButton jConnect = clientFrame.getButton("Connect");
+        jConnect.setPreferredSize(new Dimension(150,50));
         jPanel3.add(jConnect);
 
-        JLabel jlFileName = new JLabel("Choose a file to send to the server");
-        jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
+        JLabel jlFileName = clientFrame.getJLabel("Choose a file to send to the server");
         jlFileName.setBorder(new EmptyBorder(50, 0, 0, 0));
-        jlFileName.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JPanel jpButton = new JPanel();
-        jpButton.setBorder(new EmptyBorder(30, 0, 10, 0));
-
-        JButton jbUploadFile = new JButton("Upload File");
-        jbUploadFile.setPreferredSize(new Dimension(150, 60));
-        jbUploadFile.setFont(new Font("Arial", Font.BOLD, 20));
-
-        JButton jbChooseFile = new JButton("Choose File");
-        jbChooseFile.setPreferredSize(new Dimension(150, 60));
-        jbChooseFile.setFont(new Font("Arial", Font.BOLD, 20));
-
-        JPanel jPanel4 = new JPanel();
-        jPanel4.setBorder(new EmptyBorder(10,0,0,0));
-
-        JButton jDownload = new JButton("Download from server");
-        jDownload.setPreferredSize(new Dimension(300,75));
-        jDownload.setFont(new Font("Arial",Font.BOLD,20));
-
+        // Panel 3.1
+        JPanel jpButton = clientFrame.getJPanelType1(30,0,10,0);
+        JButton jbUploadFile = clientFrame.getButton1("Upload File");
+        JButton jbChooseFile = clientFrame.getButton1("Choose File");
         jpButton.add(jbUploadFile);
         jpButton.add(jbChooseFile);
-
+        //Panel 4
+        JPanel jPanel4 = clientFrame.getJPanelType1(10,0,0,0);
+        JButton jDownload = clientFrame.getButton("Download from server");
         jPanel4.add(jDownload);
 
         jConnect.addActionListener(new ActionListener() {
@@ -106,6 +67,7 @@ public class Client {
 
                 serverName = jIp.getText();
                 portNumber= Integer.parseInt(jPo.getText());
+
 
                 try {
                     socket = new Socket(serverName, portNumber);

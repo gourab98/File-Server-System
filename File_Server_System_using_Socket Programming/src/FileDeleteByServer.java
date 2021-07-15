@@ -7,35 +7,15 @@ import java.io.*;
 import java.nio.file.*;
 
 public class FileDeleteByServer extends Server{
-
+    static FrameElement showFrame=new FrameElement();
     public static JFrame createFrame(int id,String fileName, byte[] fileData, String fileExtension) {
-
-
-        JFrame jFrame = new JFrame("File Deletor");
-        jFrame.setSize(800, 800);
-
-        JPanel jPanel = new JPanel();
-        jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
-
-        JLabel jlTitle = new JLabel("File Deletor");
-        jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-        jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-        jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
-
-        JLabel jlPrompt = new JLabel("Are you sure you want to download " + fileName + "?");
-        jlPrompt.setFont(new Font("Arial", Font.BOLD, 20));
-        jlPrompt.setBorder(new EmptyBorder(20, 0, 10, 0));
-        jlPrompt.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-
-        JButton jbYes = new JButton("Delete");
-        jbYes.setPreferredSize(new Dimension(150, 75));
-        jbYes.setFont(new Font("Arial", Font.BOLD, 20));
+        JFrame jFrame = showFrame.getJFrame("File Deleter");
+        JPanel jPanel = showFrame.getJPanel();
+        JLabel jlTitle = showFrame.getJLabel("Be Careful!");
+        JLabel jlPrompt = showFrame.getJLabel("Are you sure you want to download " + fileName + "?");
+        JButton jbYes = showFrame.getButton1("Delete");
         jbYes.setBackground(Color.RED);
-
-        JButton jbNo = new JButton("No");
-        jbNo.setPreferredSize(new Dimension(150, 75));
-        jbNo.setFont(new Font("Arial", Font.BOLD, 20));
+        JButton jbNo = showFrame.getButton1("No");
 
         JLabel jlFileContent = new JLabel();
         jlFileContent.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -54,9 +34,6 @@ public class FileDeleteByServer extends Server{
         jbYes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-//                final String file =System.getProperty("Server File\\" + fileName);
-//                final Path filePath= new File(file).toPath();
 
                 Path filePath=Paths.get("Server File\\" + fileName);
                 File fileToDelete = new File(String.valueOf(filePath));

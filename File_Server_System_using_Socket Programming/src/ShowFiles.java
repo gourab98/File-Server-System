@@ -6,30 +6,23 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class ShowFiles extends Client{
-
+public class ShowFiles<serverFrame> extends Client{
+   public static FrameElement showFrame =new FrameElement();
     public static void showAvailableFiles(){
 
         int[] size = new int[1];
         size[0] = 0;
-        JFrame jFrame1 = new JFrame("Server Files");
+        JFrame jFrame1 = showFrame.getJFrame("Server Files");
         jFrame1.setSize(600, 600);
-        jFrame1.setLayout(new BoxLayout(jFrame1.getContentPane(), BoxLayout.Y_AXIS));
 
-        JPanel jPanel = new JPanel();
-        jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
-
+        JPanel jPanel = showFrame.getJPanel();
         JScrollPane jScrollPane = new JScrollPane(jPanel);
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
-        JLabel jlTitle = new JLabel("File Lists");
-        jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-        jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
-        jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
+        JLabel jlTitle = showFrame.getJLabel("File Lists");
 
         jFrame1.add(jlTitle);
         jFrame1.add(jScrollPane);
-
         jFrame1.setVisible(true);
 
         downloadedfile.clear();
@@ -69,12 +62,8 @@ public class ShowFiles extends Client{
 
         for (MyFile file : downloadedfile) {
 
-            JPanel jpFileRow = new JPanel();
-            jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
-
-            JLabel jlFileName = new JLabel(file.name);
-            jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
-            jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
+            JPanel jpFileRow = showFrame.getJPanel();
+            JLabel jlFileName = showFrame.getJLabel(file.name);
 
             jpFileRow.setName((String.valueOf(file.id)));
             jpFileRow.addMouseListener(getMyMouseListener());
