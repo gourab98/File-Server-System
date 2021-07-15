@@ -8,39 +8,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FileDownloadByClient  extends Client{
+    static FrameElement showFrame=new FrameElement();
     public static JFrame createFrame(String fileName, byte[] fileData, String fileExtension) {
-
-        JFrame jFrame = new JFrame("Download file");
-        jFrame.setSize(800, 800);
-
-        JPanel jPanel = new JPanel();
-        jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
-
-        JLabel jlTitle = new JLabel("File Downloader");
-        jlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
-        jlTitle.setFont(new Font("Arial", Font.BOLD, 25));
-        jlTitle.setBorder(new EmptyBorder(20, 0, 10, 0));
-
-        JLabel jlPrompt = new JLabel("Are you sure you want to download " + fileName + "?");
-        jlPrompt.setFont(new Font("Arial", Font.BOLD, 20));
-        jlPrompt.setBorder(new EmptyBorder(20, 0, 10, 0));
-        jlPrompt.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-
-        JButton jbYes = new JButton("Yes");
-        jbYes.setPreferredSize(new Dimension(150, 75));
-        jbYes.setFont(new Font("Arial", Font.BOLD, 20));
-
-
-        JButton jbNo = new JButton("No");
-        jbNo.setPreferredSize(new Dimension(150, 75));
-        jbNo.setFont(new Font("Arial", Font.BOLD, 20));
-
+        JFrame jFrame = showFrame.getJFrame("Download file");
+        JPanel jPanel = showFrame.getJPanel();
+        JLabel jlTitle = showFrame.getJLabel("File Downloader");
+        JLabel jlPrompt = showFrame.getJLabel("Are you sure you want to download " + fileName + "?");
         JLabel jlFileContent = new JLabel();
         jlFileContent.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        JPanel jpButtons = new JPanel();
-        jpButtons.setBorder(new EmptyBorder(20, 0, 10, 0));
+        JPanel jpButtons = showFrame.getJPanelType1(20, 0, 10, 0);
+        JButton jbYes = showFrame.getButton1("Yes");
+        JButton jbNo = showFrame.getButton1("No");
         jpButtons.add(jbYes);
         jpButtons.add(jbNo);
 
@@ -68,7 +46,6 @@ public class FileDownloadByClient  extends Client{
 
             }
         });
-
 
         jbNo.addActionListener(new ActionListener() {
             @Override

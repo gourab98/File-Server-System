@@ -12,7 +12,7 @@ public class FileDeleteByServer extends Server{
         JFrame jFrame = showFrame.getJFrame("File Deleter");
         JPanel jPanel = showFrame.getJPanel();
         JLabel jlTitle = showFrame.getJLabel("Be Careful!");
-        JLabel jlPrompt = showFrame.getJLabel("Are you sure you want to download " + fileName + "?");
+        JLabel jlPrompt = showFrame.getJLabel("Are you sure you want to delete " + fileName + "?");
         JButton jbYes = showFrame.getButton1("Delete");
         jbYes.setBackground(Color.RED);
         JButton jbNo = showFrame.getButton1("No");

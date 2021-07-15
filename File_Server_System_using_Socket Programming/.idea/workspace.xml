@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="Server Connectionu pdated" />
+    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="Server Connection Updated">
+      <change beforePath="$PROJECT_DIR$/src/FileDeleteByServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDeleteByServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileDownloadByClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDownloadByClient.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +19,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -93,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626329514516</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Server Connection Updated">
+      <created>1626329802908</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626329802908</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,7 +127,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="File Downloaded popup" />
     <MESSAGE value="Server Connectionu pdated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Server Connectionu pdated" />
+    <MESSAGE value="Server Connection Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server Connection Updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
