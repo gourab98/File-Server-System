@@ -10,7 +10,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-
 public class Server {
 
     static OutputStream allFileOutputStream;
@@ -29,19 +28,14 @@ public class Server {
         JPanel jPanel = serverFrame.getJPanel();
         JScrollPane jScrollPane = serverFrame.getJScrollPane();
         JLabel jlTitle = serverFrame.getJLabel("Server File GUI");
-
         JLabel waitClient = serverFrame.getJLabel("Waiting For the Client to Connect");
-
-        JPanel jPanel2 = new JPanel();
-        jPanel2.setBorder(new EmptyBorder(10,0,0,0));
-
-        JLabel jPort = serverFrame.getJLabel("Your Port number is 1212");
-        jPanel2.add(jPort);
-
         JPanel jPanel1 = new JPanel();
         JButton jshowFiles = serverFrame.getButton("All Available Server Files");
         jPanel1.add(jshowFiles);
-
+        JPanel jPanel2 = new JPanel();
+        jPanel2.setBorder(new EmptyBorder(10,0,0,0));
+        JLabel jPort = serverFrame.getJLabel("Your Port number is 1212");
+        jPanel2.add(jPort);
         JPanel jPanel3 = new JPanel();
         jPanel3.setBorder(new EmptyBorder(0,0,0,0));
 
@@ -77,81 +71,33 @@ public class Server {
         ReadFiles.readAllFile();
 
         serverPortNumber= 1212;
-
-        if(serverSocket==null)
-        serverSocket = new ServerSocket(serverPortNumber);
-
-        Socket socket = serverSocket.accept();
-        waitClient.setText("Client is Connected");
-
-        allFileOutputStream = socket.getOutputStream();
-        ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
-        objectOutputStream.writeObject(allFiles);
-
-
-        while (true) {
-
+        /** Server Socket will instantiated only one
+            Singleton Pattern
+         **/
+        if(serverSocket==null) {
             try {
-
-                DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
-                int fileNameLength = dataInputStream.readInt();
-
-                if (fileNameLength > 0) {
-
-                    byte[] fileNameBytes = new byte[fileNameLength];
-                    dataInputStream.readFully(fileNameBytes, 0, fileNameBytes.length);
-
-                    String fileName = new String(fileNameBytes);
-
-                    int fileContentLength = dataInputStream.readInt();
-
-                    if (fileContentLength > 0) {
-                        byte[] fileContentBytes = new byte[fileContentLength];
-                        dataInputStream.readFully(fileContentBytes, 0, fileContentBytes.length);
-
-                        JPanel jpFileRow = new JPanel();
-                        jpFileRow.setLayout(new BoxLayout(jpFileRow, BoxLayout.X_AXIS));
-
-                        JLabel jlFileName = new JLabel(fileName);
-                        jlFileName.setFont(new Font("Arial", Font.BOLD, 20));
-                        jlFileName.setBorder(new EmptyBorder(10, 0, 10, 0));
-
-                        if (getFileExtension(fileName).equalsIgnoreCase("txt")) {
-                            jpFileRow.setName((String.valueOf(fileId)));
-
-                            jpFileRow.add(jlFileName);
-                            jPanel.add(jpFileRow);
-
-                            jFrame.validate();
-                        } else {
-                            jpFileRow.setName((String.valueOf(fileId)));
-
-                            jpFileRow.add(jlFileName);
-                            jPanel.add(jpFileRow);
-
-                            jFrame.validate();
-                        }
-
-                        myFiles.add(new MyFile(fileId, fileName, fileContentBytes, getFileExtension(fileName)));
-                        fileId++;
-                        ReadFiles.readAllFile();
-
-                        File fileToDownload = new File("Server File/"+fileName);
-
-                        FileOutputStream fileOutputStream = new FileOutputStream(fileToDownload);
-                        fileOutputStream.write(fileContentBytes);
-                        fileOutputStream.close();
-
-                    }
-                }
+                serverSocket = new ServerSocket(serverPortNumber);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-    }
 
-    public static String getFileExtension(String fileName) {
-        return FileExtension.getExtension(fileName);
+        Socket socket = null;
+        try {
+            socket = serverSocket.accept();
+            waitClient.setText("Client is Connected");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        allFileOutputStream = socket.getOutputStream();
+        ObjectOutputStream objectOutputStream = new ObjectOutputStream(allFileOutputStream);
+        objectOutputStream.writeObject(allFiles);
+        ServerController serverController=new ServerController();
+
+        while (true) {
+            serverController.getClientData(socket,jFrame,jPanel,myFiles,fileId);
+        }
     }
 
     public static MouseListener getMyMouseListener() {
@@ -160,9 +106,7 @@ public class Server {
             public void mouseClicked(MouseEvent e) {
                 JPanel jPanel = (JPanel) e.getSource();
                 int fileId = Integer.parseInt(jPanel.getName());
-
                 for (MyFile myFile : allFiles) {
-
                     if (myFile.getId() == fileId) {
                         System.out.println(myFile.id);
                         JFrame jfPreview = FileDeleteByServer.createFrame(myFile.getId(),myFile.getName(), myFile.getData(), myFile.getFileExtension());
