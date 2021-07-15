@@ -1,38 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="File Downloaded popup">
-      <change afterPath="$PROJECT_DIR$/Server File/ID2017831040.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server File/utc.reg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server File/১.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FrameElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IShowFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pServer/ServerConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pServer/ServerSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileDeleteByServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDeleteByServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShowFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowFiles.java" afterDir="false" />
-    </list>
+    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="Server Connectionu pdated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,6 +17,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1tyBhdnU2MKUqZGepds8dvu3Z18" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -116,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624528300345</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Server Connectionu pdated">
+      <created>1626329514516</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626329514516</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,7 +111,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="File Downloaded popup" />
-    <option name="LAST_COMMIT_MESSAGE" value="File Downloaded popup" />
+    <MESSAGE value="Server Connectionu pdated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Server Connectionu pdated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
