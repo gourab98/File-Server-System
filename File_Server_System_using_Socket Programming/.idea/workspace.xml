@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="File Extension refactored">
-      <change afterPath="$PROJECT_DIR$/Server File/9781260515046_Database_System_Concepts_7th_49a4.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server File/Drug used in hematopoitic system.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServerController.java" afterDir="false" />
+    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="server Controller refactored">
+      <change afterPath="$PROJECT_DIR$/src/CommandInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DownloadCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ICommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDeleteByServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/FileDownloadByClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileDeleteByServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDeleteByServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileDownloadByClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileDownloadByClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrameElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrameElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ShowFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShowFiles.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626342981826</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="server Controller refactored">
+      <created>1626345904539</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1626345904539</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +190,8 @@
     <MESSAGE value="Client Connection bug fixed" />
     <MESSAGE value="File Uploader Added" />
     <MESSAGE value="File Extension refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="File Extension refactored" />
+    <MESSAGE value="server Controller refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="server Controller refactored" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

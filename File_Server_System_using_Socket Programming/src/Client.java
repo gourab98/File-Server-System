@@ -28,7 +28,7 @@ public class Client {
         JFrame jFrame = clientFrame.getJFrame("Client GUI");
         JLabel jlTitle = clientFrame.getJLabel("I am Client");
          //Panel 1
-        JPanel jPanel = clientFrame.getJPanelType1(10,0,10,0);
+        JPanel jPanel = clientFrame.getJPanel(10,0,10,0);
         JLabel jIplable = clientFrame.getJLabel("Enter IP : ");
         jIplable.setAlignmentX(Component.LEFT_ALIGNMENT);
         JTextField jIp = clientFrame.getJTextField("localhost");
@@ -36,14 +36,14 @@ public class Client {
         jPanel.add(jIplable);
         jPanel.add(jIp);
         //Panel 2
-        JPanel jPanel2 = clientFrame.getJPanelType1(3,0,0,0);
+        JPanel jPanel2 = clientFrame.getJPanel(3,0,0,0);
         JLabel jPort = clientFrame.getJLabel("Enter Port : ");
         jPort.setAlignmentX(Component.LEFT_ALIGNMENT);
         JTextField jPo = clientFrame.getJTextField("0000");
         jPanel2.add(jPort);
         jPanel2.add(jPo);
         //Panel 2
-        JPanel jPanel3 = clientFrame.getJPanelType1(3,0,0,0);
+        JPanel jPanel3 = clientFrame.getJPanel(3,0,0,0);
         JButton jConnect = clientFrame.getButton("Connect");
         jConnect.setPreferredSize(new Dimension(150,50));
         jPanel3.add(jConnect);
@@ -51,13 +51,13 @@ public class Client {
         JLabel jlFileName = clientFrame.getJLabel("Choose a file to send to the server");
         jlFileName.setBorder(new EmptyBorder(50, 0, 0, 0));
         // Panel 3.1
-        JPanel jpButton = clientFrame.getJPanelType1(30,0,10,0);
-        JButton jbUploadFile = clientFrame.getButton1("Upload File");
-        JButton jbChooseFile = clientFrame.getButton1("Choose File");
+        JPanel jpButton = clientFrame.getJPanel(30,0,10,0);
+        JButton jbUploadFile = clientFrame.getButton("Upload File",150, 75);
+        JButton jbChooseFile = clientFrame.getButton("Choose File",150, 75);
         jpButton.add(jbUploadFile);
         jpButton.add(jbChooseFile);
         //Panel 4
-        JPanel jPanel4 = clientFrame.getJPanelType1(10,0,0,0);
+        JPanel jPanel4 = clientFrame.getJPanel(10,0,0,0);
         JButton jDownload = clientFrame.getButton("Download from server");
         jPanel4.add(jDownload);
 

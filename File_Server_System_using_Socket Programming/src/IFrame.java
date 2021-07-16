@@ -10,7 +10,7 @@ public interface IFrame {
     public JLabel getJLabel(String title);
 
     public JButton getButton(String title);
-    public JButton getButton1(String title);
+
 
     public JTextField  getJTextField(String title);
 

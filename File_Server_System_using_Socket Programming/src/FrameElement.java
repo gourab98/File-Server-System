@@ -14,9 +14,21 @@ public class FrameElement implements IFrame {
         return jFrame;
     }
 
+    public JFrame getJFrame(String title,int width,int height) {
+        JFrame jFrame = new JFrame(title);
+        jFrame.setSize(width, height);
+        jFrame.setLayout(new BoxLayout(jFrame.getContentPane(), BoxLayout.Y_AXIS));
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        return jFrame;
+    }
     @Override
     public JPanel getJPanel() {
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
+        return jPanel;
+    }
+    public JPanel getJPanel(int top,int left,int bottom ,int right) {
+        JPanel jPanel = new JPanel();
+        jPanel.setBorder(new EmptyBorder(top, left, bottom, right));
         return jPanel;
     }
 
@@ -45,8 +57,8 @@ public class FrameElement implements IFrame {
         jButton .setAlignmentX(Component.CENTER_ALIGNMENT);
         return  jButton ;
     }
-    @Override
-    public JButton getButton1(String title) {
+
+    public JButton getButton(String title,int width,int height) {
         JButton jButton = new JButton(title);
         jButton.setPreferredSize(new Dimension(150, 75));
         jButton.setFont(new Font("Arial", Font.BOLD, 20));
@@ -61,9 +73,5 @@ public class FrameElement implements IFrame {
         return jTextField;
     }
 
-    public JPanel getJPanelType1(int top,int left,int bottom ,int right) {
-        JPanel jPanel = new JPanel();
-        jPanel.setBorder(new EmptyBorder(top, left, bottom, right));
-        return jPanel;
-    }
+
 }

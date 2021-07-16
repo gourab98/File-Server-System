@@ -9,8 +9,7 @@ public class ShowFiles extends Client{
 
         int[] size = new int[1];
         size[0] = 0;
-        JFrame jFrame1 = showFrame.getJFrame("Server Files");
-        jFrame1.setSize(600, 600);
+        JFrame jFrame1 = showFrame.getJFrame("Server Files",808,850);
         JPanel jPanel = showFrame.getJPanel();
         JScrollPane jScrollPane = new JScrollPane(jPanel);
         jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);

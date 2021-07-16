@@ -13,9 +13,9 @@ public class FileDeleteByServer extends Server{
         JPanel jPanel = showFrame.getJPanel();
         JLabel jlTitle = showFrame.getJLabel("Be Careful!");
         JLabel jlPrompt = showFrame.getJLabel("Are you sure you want to delete " + fileName + "?");
-        JButton jbYes = showFrame.getButton1("Delete");
+        JButton jbYes = showFrame.getButton("Delete",150, 75);
         jbYes.setBackground(Color.RED);
-        JButton jbNo = showFrame.getButton1("No");
+        JButton jbNo = showFrame.getButton("No",150, 75);
 
         JLabel jlFileContent = new JLabel();
         jlFileContent.setAlignmentX(Component.CENTER_ALIGNMENT);

@@ -16,9 +16,9 @@ public class FileDownloadByClient  extends Client{
         JLabel jlPrompt = showFrame.getJLabel("Are you sure you want to download " + fileName + "?");
         JLabel jlFileContent = new JLabel();
         jlFileContent.setAlignmentX(Component.CENTER_ALIGNMENT);
-        JPanel jpButtons = showFrame.getJPanelType1(20, 0, 10, 0);
-        JButton jbYes = showFrame.getButton1("Yes");
-        JButton jbNo = showFrame.getButton1("No");
+        JPanel jpButtons = showFrame.getJPanel(20, 0, 10, 0);
+        JButton jbYes = showFrame.getButton("Yes",150, 75);
+        JButton jbNo = showFrame.getButton("No",150, 75);
         jpButtons.add(jbYes);
         jpButtons.add(jbNo);
 
