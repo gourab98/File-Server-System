@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/src/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+    <list default="true" id="21697a39-b989-436b-b9a0-b259b953f774" name="Default Changelist" comment="File Extension refactored">
+      <change afterPath="$PROJECT_DIR$/Server File/9781260515046_Database_System_Concepts_7th_49a4.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server File/Drug used in hematopoitic system.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/File_Server_System_using_Socket Programming/ShowFiles.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+>>>>>>> 3470eb660cd548236c9e3ed7399b65d7f847f3a1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,13 +27,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
         <option value="package-info" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1tyBhdnU2MKUqZGepds8dvu3Z18" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -27,16 +48,17 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Submission Newtworkin Project - Copy/File_Server_System_using_Socket Programming" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager" selected="Application.Server">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -68,6 +90,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -79,8 +102,66 @@
       <option name="presentableId" value="Default" />
       <updated>1623731568063</updated>
     </task>
+    <task id="LOCAL-00001" summary="File Downloaded popup">
+      <created>1624528300345</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1624528300345</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Server Connectionu pdated">
+      <created>1626329514516</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1626329514516</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Server Connection Updated">
+      <created>1626329802908</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1626329802908</updated>
+    </task>
+    <task id="LOCAL-00004" summary="File Download">
+      <created>1626330336620</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1626330336620</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Strategy Pattern Bug Fixed">
+      <created>1626332699675</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1626332699675</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Client Connection bug fixed">
+      <created>1626337205995</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1626337205995</updated>
+    </task>
+    <task id="LOCAL-00007" summary="File Uploader Added">
+      <created>1626341410699</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1626341410699</updated>
+    </task>
+    <task id="LOCAL-00008" summary="File Extension refactored">
+      <created>1626342981826</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1626342981826</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="WindowStateProjectService">
     <state x="1641" y="25" key="#Project_Structure" timestamp="1623731613070">
       <screen x="1366" y="0" width="1366" height="728" />
@@ -164,5 +245,44 @@
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1366.728@0.0.1366.728" timestamp="1624390124269" />
     <state x="1712" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1366.728@1366.0.1366.728" timestamp="1623734510511" />
+=======
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="File Downloaded popup" />
+    <MESSAGE value="Server Connectionu pdated" />
+    <MESSAGE value="Server Connection Updated" />
+    <MESSAGE value="File Download" />
+    <MESSAGE value="Strategy Pattern Bug Fixed" />
+    <MESSAGE value="Client Connection bug fixed" />
+    <MESSAGE value="File Uploader Added" />
+    <MESSAGE value="File Extension refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="File Extension refactored" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/IFrame.java</url>
+          <line>11</line>
+          <properties class="IServerFrame" method="getButton">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+>>>>>>> 3470eb660cd548236c9e3ed7399b65d7f847f3a1
   </component>
 </project>
